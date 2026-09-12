@@ -1,0 +1,133 @@
+/* =========================================
+   HAPPY GAME - style.css
+   Estrutura inicial do projeto
+   ========================================= */
+
+/* -----------------------------------------
+   Variáveis CSS
+   TODO: definir identidade visual (cores, fontes, espaçamentos)
+----------------------------------------- */
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #cccccc;
+    --fonte-principal: Arial, sans-serif;
+    --espacamento-padrao: 1rem;
+}
+
+/* -----------------------------------------
+   Reset básico
+----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -----------------------------------------
+   Body
+   TODO: tipografia definitiva
+----------------------------------------- */
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
+    line-height: 1.5;
+}
+
+/* -----------------------------------------
+   Header
+   TODO: layout e identidade visual do cabeçalho
+----------------------------------------- */
+header {
+    padding: var(--espacamento-padrao);
+}
+
+/* -----------------------------------------
+   Nav
+   TODO: layout do menu, estados hover/active
+----------------------------------------- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--espacamento-padrao);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+/* -----------------------------------------
+   Main
+   TODO: layout geral, grid/flex das seções, cards
+----------------------------------------- */
+main {
+    padding: var(--espacamento-padrao);
+}
+
+/* -----------------------------------------
+   Footer
+   TODO: layout e conteúdo final do rodapé
+----------------------------------------- */
+footer {
+    padding: var(--espacamento-padrao);
+    text-align: center;
+}
+
+/* -----------------------------------------
+   Links (geral)
+----------------------------------------- */
+a {
+    color: var(--cor-primaria);
+}
+
+/* -----------------------------------------
+   Formulário
+   TODO: estilização definitiva dos campos
+----------------------------------------- */
+form div {
+    margin-bottom: var(--espacamento-padrao);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-destaque);
+}
+
+/* -----------------------------------------
+   Botão
+   TODO: estilização definitiva e animações
+----------------------------------------- */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* -----------------------------------------
+   Imagens
+   TODO: estilização de imagens dos jogos
+----------------------------------------- */
+
+/* -----------------------------------------
+   Animações
+   TODO: transições e efeitos
+----------------------------------------- */
+
+/* -----------------------------------------
+   Responsividade
+   TODO: ajustes adicionais para outros breakpoints
+----------------------------------------- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
