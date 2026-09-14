@@ -13,6 +13,11 @@
     --cor-destaque: #cccccc;
     --fonte-principal: Arial, sans-serif;
     --espacamento-padrao: 1rem;
+
+    /* Topbar */
+    --topbar-bg: #d9d9d9;
+    --topbar-radius: 12px;
+    --logo-border: #999999;
 }
 
 /* -----------------------------------------
@@ -36,26 +41,69 @@ body {
 }
 
 /* -----------------------------------------
-   Header
-   TODO: layout e identidade visual do cabeçalho
+   Header / Topbar
+   TODO: identidade visual definitiva (logo, cores, sombras)
 ----------------------------------------- */
-header {
-    padding: var(--espacamento-padrao);
+.header {
+    display: flex;
+    justify-content: center;
+    margin: var(--espacamento-padrao)
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 80px;
+    width: 1114px;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--topbar-bg);
+    border: 2px solid var(--cor-primaria);
+    border-radius: var(--topbar-radius);
+}
+
+/* Caixa reservada para a logo da desenvolvedora */
+.topbar .logo {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: var(--cor-secundaria);
+    border: 1px solid var(--logo-border);
+    border-radius: 4px;
+}
+
+/* Título oculto visualmente, mantido para acessibilidade/SEO */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* -----------------------------------------
    Nav
-   TODO: layout do menu, estados hover/active
+   TODO: estados hover/active, indicador de página ativa
 ----------------------------------------- */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: var(--espacamento-padrao);
+.topbar nav {
+    flex: 1;
 }
 
-nav a {
+.topbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.topbar nav a {
     text-decoration: none;
     color: var(--cor-primaria);
+    font-size: 0.9rem;
 }
 
 /* -----------------------------------------
@@ -127,7 +175,35 @@ button {
    TODO: ajustes adicionais para outros breakpoints
 ----------------------------------------- */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    .topbar {
+        flex-wrap: wrap;
+        justify-content: center;
     }
+
+    .topbar nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+}
+
+
+
+
+/* -----------------------------------------
+   Aqui eu não garanto o código
+----------------------------------------- */
+.faq-card {
+    border-radius: 16px;
+    padding: 20px;
+    background: var(--card-bg);
+}
+
+.faq-card summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.faq-card p {
+    margin-top: 16px;
 }
