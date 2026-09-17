@@ -1,44 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Game - Jogos</title>
+    <title>Little Comet Studio - Jogos</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="imagens/logo-comet-transparente.png">
 </head>
+
 <body>
 
-    <header>
-        <h1>Happy Game</h1>
-    </header>
+    <header class="header">
+        <section class="topbar">
+            <div class="logo">
+                <img src="imagens/logo-comet-transparente.png" alt="Logo Little Comet Studio">
+            </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projeto.html">Projeto</a></li>
-            <li><a href="jogos.html">Jogos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projeto.html">Projeto</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
 
     <main>
 
-        <section id="catalogo-jogos">
-            <!-- TODO: catálogo de jogos da desenvolvedora -->
+        <div class="page-hero">
+            <h1 class="page-main-title">Catálogo de Jogos</h1>
+            <p class="page-subtitle">Um dossiê com tudo que já criamos e o que ainda está em órbita.</p>
+        </div>
 
-            <article class="jogo">
-                <!-- TODO: imagem do jogo -->
-                <!-- TODO: informações do jogo (nome, gênero, plataforma) -->
-                <!-- TODO: descrição do jogo -->
-            </article>
+        <div class="site-container">
 
+            <section id="catalogo-jogos" class="jogos-dossie">
+
+                <article class="jogo-entry">
+                    <div class="jogo-entry-index">01</div>
+                    <div class="jogo-entry-content">
+                        <div class="jogo-entry-header">
+                            <h3>Lumenfall</h3>
+                            <span class="jogo-status jogo-status-dev">Em desenvolvimento</span>
+                        </div>
+                        <ul class="jogo-ficha">
+                            <li><strong>Gênero:</strong> Aventura / Exploração</li>
+                            <li><strong>Estilo:</strong> 3D</li>
+                            <li><strong>Plataforma:</strong> <!-- TODO: definir plataformas de lançamento --></li>
+                        </ul>
+                        <p>
+                            Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno
+                            viajante por ambientes coloridos, ruínas misteriosas e encontros inesperados em uma
+                            jornada de descoberta, curiosidade e busca por um caminho de volta para casa.
+                        </p>
+                        <button class="btn-primary">Ver jogo</button>
+                    </div>
+                </article>
+
+                <article class="jogo-entry">
+                    <div class="jogo-entry-index">02</div>
+                    <div class="jogo-entry-content">
+                        <div class="jogo-entry-header">
+                            <h3>Moss &amp; Mischief</h3>
+                            <span class="jogo-status jogo-status-lancado">Lançado</span>
+                        </div>
+                        <ul class="jogo-ficha">
+                            <li><strong>Gênero:</strong> Puzzle / Plataforma</li>
+                            <li><strong>Estilo:</strong> 3D</li>
+                            <li><strong>Plataforma:</strong> <!-- TODO: definir plataformas de lançamento --></li>
+                        </ul>
+                        <p>
+                            Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos
+                            secretos e causando a quantidade certa de confusão pelo caminho.
+                        </p>
+                        <button class="btn-primary">Ver jogo</button>
+                    </div>
+                </article>
+
+                <article class="jogo-entry">
+                    <div class="jogo-entry-index">03</div>
+                    <div class="jogo-entry-content">
+                        <div class="jogo-entry-header">
+                            <h3>Pebble &amp; Tide</h3>
+                            <span class="jogo-status jogo-status-lancado">Lançado</span>
+                        </div>
+                        <ul class="jogo-ficha">
+                            <li><strong>Gênero:</strong> <!-- TODO: definir gênero --></li>
+                            <li><strong>Estilo:</strong> 2D</li>
+                            <li><strong>Plataforma:</strong> <!-- TODO: definir plataformas de lançamento --></li>
+                        </ul>
+                        <p>
+                            <!-- TODO: escrever descrição própria para este jogo -->
+                        </p>
+                        <button class="btn-primary">Ver jogo</button>
+                    </div>
+                </article>
+
+            </section>
+
+        </div>
+
+        <section class="cta">
+            <div class="site-container">
+                <h2>Gostou do que viu?</h2>
+                <p>Fale com a gente e acompanhe as novidades dos nossos próximos lançamentos.</p>
+                <button class="btn-primary">Entrar em contato</button>
+            </div>
         </section>
+
+        <div class="site-container">
+
+            <section class="faq">
+                <h2>Perguntas frequentes</h2>
+
+                <details class="faq-card">
+                    <summary>Onde posso jogar os jogos da Little Comet Studio?</summary>
+                    <p>
+                        <!-- TODO: preencher com as plataformas reais de distribuição -->
+                    </p>
+                </details>
+
+                <details class="faq-card">
+                    <summary>Os jogos são pagos ou gratuitos?</summary>
+                    <p>
+                        <!-- TODO: preencher com o modelo de distribuição real de cada jogo -->
+                    </p>
+                </details>
+
+                <details class="faq-card">
+                    <summary>Vocês aceitam sugestões para os próximos jogos?</summary>
+                    <p>
+                        Sim! Você pode enviar sua sugestão através da nossa página de contato.
+                    </p>
+                </details>
+            </section>
+
+        </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Happy Game</p>
+        <!-- TODO: rodapé com informações finais -->
+        <p>&copy; 2026 Little Comet Studio</p>
     </footer>
 
 </body>
+
 </html>

@@ -1,73 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Game - Projeto</title>
+    <title>Little Comet Studio - Projeto</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="imagens/logo-comet-transparente.png">
 </head>
+
 <body>
 
-    <header>
-        <h1>Happy Game</h1>
-    </header>
+    <header class="header">
+        <section class="topbar">
+            <div class="logo">
+                <img src="imagens/logo-comet-transparente.png" alt="Logo Little Comet Studio">
+            </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projeto.html">Projeto</a></li>
-            <li><a href="jogos.html">Jogos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projeto.html">Projeto</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
 
     <main>
 
-        <section id="problema-oportunidade">
-            <!-- TODO: problema/oportunidade identificada -->
+        <div class="page-hero">
+            <h1 class="page-main-title">Nosso Projeto</h1>
+            <p class="page-subtitle">A história, a missão e a forma como a Little Comet Studio dá vida aos seus jogos.</p>
+        </div>
+
+        <div class="site-container">
+
+            <section id="nossa-historia">
+                <div class="projeto-block-text">
+                    <h2>Como tudo começou</h2>
+                    <br />
+                    <p>
+                        A Little Comet Studio nasceu de uma ideia simples: nem todo jogo precisa ser gigantesco para
+                        deixar uma marca. Começamos como um pequeno grupo de desenvolvedores apaixonados por contar
+                        histórias curtas, cheias de personalidade, em mundos que cabem no bolso mas parecem
+                        enormes por dentro.<br /><br />
+
+                        O nome do estúdio vem justamente disso: um cometa é pequeno perto das estrelas, mas deixa um
+                        rastro que todo mundo enxerga. É essa a marca que queremos deixar com cada jogo que
+                        lançamos.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="projeto-missao">
+            <div class="site-container">
+                <h2>Nossa missão</h2>
+                <br />
+                <p>
+                    Acreditamos em jogos independentes feitos com cuidado, curiosidade e um pouco de humor. Nosso
+                    objetivo não é competir em escala, e sim em identidade: criar experiências coloridas,
+                    imaginativas e memoráveis, que os jogadores lembrem muito depois de terminar.
+                </p>
+            </div>
         </section>
 
-        <section id="pesquisa-mercado">
-            <!-- TODO: pesquisa sobre o mercado de games -->
+        <div class="site-container">
+
+            <section id="nossa-abordagem">
+                <div class="projeto-block-text">
+                    <h2>Como criamos nossos jogos</h2>
+                    <br />
+                    <p>Cada projeto da Little Comet Studio segue alguns princípios que guiam nossas decisões, do
+                        primeiro rascunho até o lançamento.</p>
+                </div>
+
+                <div class="projeto-principios-grid">
+                    <article class="principio-card">
+                        <h3>Pequeno por escolha</h3>
+                        <p>Preferimos jogos enxutos e bem-acabados a produções gigantes e inacabadas. Escala não é
+                            prioridade, experiência é.</p>
+                    </article>
+                    <article class="principio-card">
+                        <h3>Gêneros sem fronteira</h3>
+                        <p>Não nos prendemos a um único estilo. Já exploramos aventura, puzzle e plataforma — e
+                            pretendemos continuar experimentando.</p>
+                    </article>
+                    <article class="principio-card">
+                        <h3>Personalidade em primeiro lugar</h3>
+                        <p>Arte, trilha sonora e narrativa caminham juntas desde o início de cada projeto, para que
+                            cada jogo tenha uma identidade própria e reconhecível.</p>
+                    </article>
+                    <article class="principio-card">
+                        <h3>Feito com calma</h3>
+                        <p>Preferimos lançar um jogo bem polido a lançar rápido. Cada título passa por várias
+                            rodadas de testes antes de chegar aos jogadores.</p>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="cta">
+            <div class="site-container">
+                <h2>Quer ver esses princípios em ação?</h2>
+                <p>Conheça os jogos que nasceram dessa forma de pensar.</p>
+                <button class="btn-primary">Explorar os jogos</button>
+            </div>
         </section>
 
-        <section id="publico-alvo">
-            <!-- TODO: público-alvo do projeto -->
-        </section>
+        <div class="site-container">
 
-        <section id="proposta-aplicacao">
-            <!-- TODO: proposta da aplicação -->
-        </section>
+            <section class="faq">
+                <h2>Perguntas frequentes</h2>
 
-        <section id="funcionalidades">
-            <!-- TODO: funcionalidades do projeto -->
-        </section>
+                <details class="faq-card">
+                    <summary>Por que vocês escolheram fazer jogos pequenos?</summary>
+                    <p>
+                        Acreditamos que jogos menores permitem mais foco em ideias específicas, com ciclos de
+                        desenvolvimento mais curtos e maior liberdade criativa.
+                    </p>
+                </details>
 
-        <section id="dados-pesquisados">
-            <!-- TODO: tabela com dados pesquisados -->
-            <!--
-            <table>
-                <thead>
-                    <tr>
-                        <th>Dado</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            -->
-        </section>
+                <details class="faq-card">
+                    <summary>A Little Comet Studio trabalha com algum gênero fixo?</summary>
+                    <p>
+                        Não. Gostamos de transitar entre gêneros diferentes, desde que a ideia tenha personalidade e
+                        caiba na proposta de um jogo enxuto.
+                    </p>
+                </details>
+
+                <details class="faq-card">
+                    <summary>O estúdio vai lançar novos jogos?</summary>
+                    <p>
+                        Sim! Lumenfall é o nosso projeto atual em desenvolvimento, e novas ideias já estão sendo
+                        exploradas nos bastidores.
+                    </p>
+                </details>
+            </section>
+
+        </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Happy Game</p>
+        <!-- TODO: rodapé com informações finais -->
+        <p>&copy; 2026 Little Comet Studio</p>
     </footer>
 
 </body>
+
 </html>

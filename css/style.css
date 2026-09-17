@@ -1,23 +1,33 @@
+/* Alterações incorporadas da versão atualizada em 14/09/2026. */
 /* =========================================
    HAPPY GAME - style.css
    Estrutura inicial do projeto
    ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Luckiest+Guy&display=swap');
+/* Feito em 14/09/2026 */
 
 /* -----------------------------------------
    Variáveis CSS
    TODO: definir identidade visual (cores, fontes, espaçamentos)
 ----------------------------------------- */
 :root {
-    --cor-primaria: #000000;
-    --cor-secundaria: #ffffff;
-    --cor-destaque: #cccccc;
-    --fonte-principal: Arial, sans-serif;
+    --cor-primaria: #F5F3EE;
+    /* Feito em 14/09/2026 */
+    --cor-secundaria: #0B0D12;
+    /* Feito em 14/09/2026 */
+    --cor-texto-secundario: #A9AFBA;
+    /* Feito em 14/09/2026 */
+    --cor-destaque: #E63932;
+    /* Feito em 14/09/2026 */
+    --fonte-principal: 'Fredoka', sans-serif;
+    /* Feito em 14/09/2026 */
     --espacamento-padrao: 1rem;
 
     /* Topbar */
-    --topbar-bg: #d9d9d9;
+    /* --topbar-bg: rgba(245, 243, 238, 0.12); */
     --topbar-radius: 12px;
-    --logo-border: #999999;
+    /* --logo-border: rgba(245, 243, 238, 0.35); */
 }
 
 /* -----------------------------------------
@@ -40,14 +50,55 @@ body {
     line-height: 1.5;
 }
 
+p,
+article,
+label,
+input,
+textarea {
+    color: var(--cor-primaria);
+}
+
+p {
+    color: var(--cor-texto-secundario);
+}
+
+h1 {
+    /* Luckiest Guy está sendo usado nos títulos, mas essa escolha ainda está em avaliação. */
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    color: var(--cor-primaria);
+}
+
+h2,
+h3 {
+    color: var(--cor-primaria);
+}
+
 /* -----------------------------------------
    Header / Topbar
    TODO: identidade visual definitiva (logo, cores, sombras)
 ----------------------------------------- */
+body {
+    /* Remova o ponto '.' se for a tag body */
+    margin: 0;
+    /* 
+       Aumentamos o padding do topo para empurrar o conteúdo para baixo.
+       Como seu header tem uma altura variável baseada no espaçamento padrão,
+       um valor entre 120px e 160px costuma ser o ideal.
+    */
+    padding-top: 120px;
+}
+
 .header {
     display: flex;
     justify-content: center;
-    margin: var(--espacamento-padrao)
+    position: fixed;
+    /* Força a fixação no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    /* Fica na frente de absolutamente tudo */
 }
 
 .topbar {
@@ -57,9 +108,16 @@ body {
     height: 80px;
     width: 1114px;
     padding: 0.75rem 1.5rem;
-    background-color: var(--topbar-bg);
-    border: 2px solid var(--cor-primaria);
     border-radius: var(--topbar-radius);
+    background-color: rgba(245, 243, 238, 0.12);
+    box-sizing: border-box;
+
+    /* Afasta a barra do topo do navegador e centraliza */
+    margin: var(--espacamento-padrao) auto;
+
+    /* Efeito de desfoque opcional para não misturar os textos atrás */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* Caixa reservada para a logo da desenvolvedora */
@@ -67,9 +125,25 @@ body {
     flex-shrink: 0;
     width: 60px;
     height: 60px;
-    background-color: var(--cor-secundaria);
-    border: 1px solid var(--logo-border);
     border-radius: 4px;
+    display: flex;
+    /* Feito em 14/09/2026 */
+    align-items: center;
+    /* Feito em 14/09/2026 */
+    justify-content: center;
+    /* Feito em 14/09/2026 */
+    overflow: hidden;
+    /* Feito em 14/09/2026 */
+}
+
+.topbar .logo img {
+    display: block;
+    width: 100%;
+    /* Feito em 14/09/2026 */
+    height: 100%;
+    /* Feito em 14/09/2026 */
+    object-fit: contain;
+    /* Feito em 14/09/2026 */
 }
 
 /* Título oculto visualmente, mantido para acessibilidade/SEO */
@@ -106,12 +180,30 @@ body {
     font-size: 0.9rem;
 }
 
+.topbar nav a:hover,
+.topbar nav a:focus-visible {
+    color: var(--cor-texto-secundario);
+}
+
 /* -----------------------------------------
    Main
    TODO: layout geral, grid/flex das seções, cards
 ----------------------------------------- */
 main {
-    padding: var(--espacamento-padrao);
+    padding: 0;
+    /* 16/09 */
+}
+
+.site-container {
+    /* 16/09 */
+    width: 1300px;
+    /* 16/09 */
+    max-width: 100%;
+    /* 16/09 */
+    margin: 0 auto;
+    /* 16/09 */
+    padding: 1rem;
+    /* 16/09 */
 }
 
 /* -----------------------------------------
@@ -155,9 +247,39 @@ textarea {
    TODO: estilização definitiva e animações
 ----------------------------------------- */
 button {
+    /* Feito em 14/09/2026 */
     padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
+    /* Feito em 14/09/2026 */
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+    /* Feito em 14/09/2026 */
+    color: var(--cor-primaria);
+    background-color: var(--cor-destaque);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: #FB0000;
+}
+
+.btn-secondary {
+    /* Feito em 14/09/2026 */
+    color: var(--cor-destaque);
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-destaque);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    color: var(--cor-destaque);
+    background-color: #A9AFBA;
+    border-color: #FB0000;
 }
 
 /* -----------------------------------------
@@ -185,6 +307,24 @@ button {
         align-items: center;
         gap: 0.75rem;
     }
+
+    .home-games-grid {
+        /* 16/09 */
+        margin: 0 20px;
+        /* 16/09 */
+        justify-content: center;
+        /* 16/09 */
+        flex-wrap: wrap;
+        /* 16/09 */
+    }
+
+    .home-game-card {
+        /* 16/09 */
+        width: min(100%, 260px);
+        /* 16/09 */
+        flex-basis: 260px;
+        /* 16/09 */
+    }
 }
 
 
@@ -207,3 +347,225 @@ button {
 .faq-card p {
     margin-top: 16px;
 }
+
+
+
+/* aqui eu não garanto */
+
+.home-main-title {
+    font-size: 60px;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 100px;
+    padding-top: 250px;
+}
+
+.home-studio-introduction {
+    display: flex;
+    max-width: 1000px;
+    /* 16/09 */
+    margin: 0 auto;
+    /* 16/09 */
+    align-items: center;
+    gap: 50px;
+}
+
+.home-studio-introduction-text {
+    text-align: center;
+    width: 650px;
+}
+
+.home-studio-introduction-text .h2 {
+    font-size: 100px;
+    line-height: 0.5;
+}
+
+.home-studio-introduction-image {
+    background-image: url("../imagens/fundo-espacial-liquido.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+
+.astronaut-image {
+    margin-top: 50px;
+    height: 200px;
+}
+
+.home-studio-introduction-buttons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.home-about-studio {
+    display: flex;
+    max-width: 1000px;
+    /* 16/09 */
+    margin: 0 auto;
+    /* 16/09 */
+    align-items: center;
+    gap: 50px;
+
+}
+
+.home-about-studio-image {
+    background-image: url("../imagens/fundo-espacial-liquido.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 375px;
+    height: 300px;
+    /* margin-top: 40px; */
+}
+
+.telescope-image {
+    margin: 40px 100px;
+    width: 175px;
+}
+
+.home-about-studio-text {
+    text-align: center;
+    width: 575px;
+}
+
+.destaque-jogos {
+    background-image: url("../imagens/lumenfall-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    text-align: center;
+}
+
+.home-highlights {
+    padding-top: 50px;
+    margin: 0 150px 0 150px;
+}
+
+.home-highlights-logo {
+    width: 250px;
+}
+
+.home-games-text {
+    text-align: center;
+    padding: 30px 0 30px 0;
+}
+
+.home-games-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    /* 16/09 */
+    margin: 0;
+    /* 16/09 */
+    gap: 20px;
+    /* 16/09 */
+    justify-content: space-between;
+    /* 16/09 */
+
+}
+
+.home-game-card {
+    width: calc((85% - 40px) / 3);
+    /* 16/09 */
+    flex: 0 0 calc((85% - 40px) / 3);
+    /* 16/09 */
+    overflow: hidden;
+    /* 16/09 */
+    border-radius: 20px;
+    /* 16/09 */
+    background: rgba(245, 243, 238, 0.12);
+    /* 16/09 */
+    backdrop-filter: blur(10px);
+    /* 16/09 */
+    -webkit-backdrop-filter: blur(10px);
+    /* 16/09 */
+    border: 1px solid rgba(245, 243, 238, 0.18);
+    /* 16/09 */
+}
+
+.home-game-card-image {
+    display: block;
+    /* 16/09 */
+    width: 300px;
+    /* 16/09 */
+    height: 225px;
+    /* 16/09 */
+    margin: 18px auto 0;
+    /* 16/09 */
+    border-radius: 12px;
+    /* 16/09 */
+    object-fit: cover;
+    /* 16/09 */
+}
+
+.home-game-card-content {
+    padding: 20px 18px 18px;
+    /* 16/09 */
+}
+
+.home-game-card h3 {
+    font-size: 1.35rem;
+    /* 16/09 */
+    line-height: 1.1;
+    /* 16/09 */
+}
+
+.home-game-card span {
+    display: block;
+    /* 16/09 */
+    margin-top: 2px;
+    /* 16/09 */
+    color: var(--cor-primaria);
+    /* 16/09 */
+    font-size: 1rem;
+    /* 16/09 */
+}
+
+.home-game-card p {
+    margin-top: 8px;
+    /* 16/09 */
+    min-height: 124px;
+    /* 16/09 */
+}
+
+.home-game-card .btn-primary {
+    display: block;
+    /* 16/09 */
+    width: 80%;
+    /* 16/09 */
+    margin: 16px auto 0;
+    /* 16/09 */
+    font-size: 1.05rem;
+    /* 16/09 */
+}
+
+
+
+.cta {
+    background-image: url("../imagens/fundo-espacial.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.cta .btn-primary {
+    margin-top: 20px;
+}
+
+
+.home-hero {
+    background-image: url("../imagens/background-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 3 / 1;
+    width: 100%;
+    height: auto;
+}
+

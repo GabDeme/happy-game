@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Alterações incorporadas da versão atualizada em 14/09/2026. -->
 <html lang="pt-BR">
 
 <head>
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Comet Studio - Início</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="imagens/logo-comet-transparente.png"> <!-- Feito em 14/09/2026 -->
 </head>
 
 <body>
@@ -13,10 +15,9 @@
     <header class="header">
         <section class="topbar">
             <div class="logo">
-                <!-- TODO: logo da desenvolvedora -->
+                <img src="imagens/logo-comet-transparente.png" alt="Logo Little Comet Studio">
+                <!-- Feito em 14/09/2026 -->
             </div>
-
-            <h1 class="visually-hidden">Happy Game</h1>
 
             <nav>
                 <ul>
@@ -30,107 +31,167 @@
     </header>
 
     <main>
+        <div class="home-hero">
+            <h1 class="home-main-title">Grandes Mundos.</br> Grandes Aventuras.</h1>
+        </div>
+        <div class="site-container"> <!-- 16/09 -->
 
-        <section id="apresentacao-desenvolvedora">
-            <!-- TODO: apresentação da desenvolvedora fictícia -->
-            <h1>Grandes Mundos. Grandes Aventuras.</h1>
-            <h2>Jogos independentes feitos com criatividade, personalidade e um pouco de poeira estelar.</h2>
-            <p>Na Little Comet Studio, criamos jogos coloridos e imaginativos que transformam pequenas ideias em
-                aventuras memoráveis.</p>
-            <button href="#chamada-projeto">Explorar nossos jogos</button>
-            <button href="#apresentacao-projeto">Conheça o estúdio</button>
-        </section>
+            <section id="apresentacao-desenvolvedora">
+                <!-- TODO: apresentação da desenvolvedora fictícia -->
+                <div class="home-studio-introduction">
+                    <div class="home-studio-introduction-text">
+                        <h2>Jogos independentes feitos com criatividade, personalidade e um pouco de poeira estelar.
+                        </h2>
+                        <br />
+                        <p>Na Little Comet Studio, criamos jogos coloridos e imaginativos que transformam pequenas
+                            ideias em
+                            aventuras memoráveis.</p>
+                        <div class="home-studio-introduction-buttons">
+                            <button class="btn-primary" href="/#chamada-projeto">Explorar nossos jogos</button>
+                            <button class="btn-secondary" href="/#apresentacao-projeto">Conheça o estúdio</button>
+                        </div>
+                    </div>
+                    <div class="home-studio-introduction-image">
+                        <img class="astronaut-image" src="imagens/astronauta-sem-fundo.png"
+                            alt="Astronauta de sunga voando no espaço"></img>
+                    </div>
+                </div>
 
-        <section id="apresentacao-projeto">
-            <!-- TODO: apresentação do projeto Happy Game -->
-            <h2>Um pequeno estúdio com grandes ideias.</h2>
-            <p>
-                A Little Comet Studio é uma desenvolvedora independente focada na criação de experiências pequenas e
-                marcantes.<br /><br />
+            </section>
 
-                Trabalhamos principalmente com jogos 2D e visuais estilizados, explorando diferentes gêneros sem deixar
-                de lado a criatividade e a personalidade de cada projeto.<br /><br />
+            <section id="apresentacao-projeto">
 
-                De aventuras coloridas a desafios de lógica, acreditamos que um jogo não precisa ser enorme para
-                proporcionar uma experiência memorável.
-            </p>
-            <button>Conheça mais sobre nós</button>
-        </section>
+                <div class="home-about-studio">
+                    <!-- TODO: apresentação do projeto Happy Game -->
+                    <div class="home-about-studio-image">
+                        <img class="telescope-image" src="imagens/telescopio.png" alt="Telescópio"></img>
+                    </div>
+                    <div class="home-about-studio-text">
+                        <h2>Um pequeno estúdio com grandes ideias.</h2>
+                        <br />
+                        <p>
+                            A Little Comet Studio é uma desenvolvedora independente focada na criação de experiências
+                            pequenas e
+                            marcantes.<br />
 
-        <section id="destaque-jogos">
+                            Trabalhamos principalmente explorando diferentes gêneros sem deixar
+                            de lado a criatividade e a personalidade de cada projeto.<br />
+
+                            De aventuras coloridas a desafios de lógica, acreditamos que um jogo não precisa ser enorme
+                            para
+                            proporcionar uma experiência memorável.
+                        </p>
+                    </div>
+                </div>
+                <!-- <button class="btn-secondary">Conheça mais sobre nós</button> -->
+            </section>
+
+        </div> <!-- 16/09 -->
+
+        <section class="destaque-jogos" id="destaque-jogos">
             <!-- TODO: destaque dos jogos desenvolvidos -->
-            <h2>Uma pequena luz pode guiá-lo por um mundo muito maior.</h2>
-            <p>
-                Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno viajante por
-                ambientes coloridos, ruínas misteriosas e encontros inesperados em uma jornada de descoberta,
-                curiosidade e busca por um caminho de volta para casa.
-            </p>
-            <button>Conheça Lumenfall</button>
-        </section>
-
-        <section id="chamada-projeto">
-            <!-- TODO: chamada para conhecer o projeto -->
-            <h2>Nossos Jogos</h2>
-            <p>Todo jogo começa com uma pequena ideia. Estes são alguns dos mundos que criamos ao longo do caminho.</p>
-            <div>
-                <div>
-                    <h3>Lumenfall</h3>
-                    <article>3D - Em desenvolvimento</article>
-                    <p>Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os segredos
-                        escondidos além do caminho.</p>
-                    <button>Ver jogo</button>
-                </div>
-                <div>
-                    <h3>Moss & Mischief</h3>
-                    <article>3D - Lançado</article>
-                    <p>Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos secretos
-                        e causando a quantidade certa de confusão.</p>
-                    <button>Ver jogo</button>
-                </div>
-                <div>
-                    <h3>Pebble & Tide</h3>
-                    <article>2D - Lançado</article>
-                    <p>Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os segredos
-                        escondidos além do caminho.</p>
-                    <button>Ver jogo</button>
-                </div>
+            <div class="home-highlights">
+                <img class="home-highlights-logo" src="imagens/logo-lumenfall.png" alt="Logo Lumenfall"></img>
+                <h2>Uma pequena luz pode guiá-lo por um mundo muito maior.</h2>
+                <br />
+                <p>
+                    Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno viajante por
+                    ambientes coloridos, ruínas misteriosas e encontros inesperados em uma jornada de descoberta,
+                    curiosidade e busca por um caminho de volta para casa.
+                </p>
+                <button class="btn-primary">Conheça Lumenfall</button>
             </div>
         </section>
 
-        <section>
-            <h2>Pronto para sua próxima aventura?</h2>
-            <p>Explore nossos jogos e descubra os mundos que estamos criando.</p>
-            <button>Explorar os jogos</button>
+        <div class="site-container"> <!-- 16/09 -->
+            <section id="chamada-projeto">
+                <!-- TODO: chamada para conhecer o projeto -->
+                <div class="home-games-text">
+                    <h2>Nossos Jogos</h2>
+                    <br />
+                    <p>Todo jogo começa com uma pequena ideia. Estes são alguns dos mundos que criamos ao longo do
+                        caminho.
+                    </p>
+                </div>
+                <div class="home-games-grid"> <!-- 16/09 -->
+                    <article class="home-game-card"> <!-- 16/09 -->
+                        <img class="home-game-card-image" src="imagens/lumenfall.jpg" alt="Arte de Lumenfall">
+                        <!-- 16/09 -->
+                        <div class="home-game-card-content"> <!-- 16/09 -->
+                            <h3>Lumenfall</h3>
+                            <span>3D - Em desenvolvimento</span>
+                            <p>Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os
+                                segredos escondidos além do caminho.</p>
+                            <button class="btn-primary">Ver jogo</button>
+                        </div>
+                    </article>
+                    <article class="home-game-card"> <!-- 16/09 -->
+                        <img class="home-game-card-image" src="imagens/moss-mischief.jpg" alt="Arte de Moss & Mischief">
+                        <!-- 16/09 -->
+                        <div class="home-game-card-content"> <!-- 16/09 -->
+                            <h3>Moss &amp; Mischief</h3>
+                            <span>3D - Lançado</span>
+                            <p>Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos
+                                secretos e causando a quantidade certa de confusão.</p>
+                            <button class="btn-primary">Ver jogo</button>
+                        </div>
+                    </article>
+                    <article class="home-game-card"> <!-- 16/09 -->
+                        <img class="home-game-card-image" src="imagens/pebble-tide.jpg" alt="Arte de Pebble &amp; Tide">
+                        <!-- 16/09 -->
+                        <div class="home-game-card-content"> <!-- 16/09 -->
+                            <h3>Pebble &amp; Tide</h3>
+                            <span>2D - Lançado</span>
+                            <p>Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os
+                                segredos escondidos além do caminho.</p>
+                            <button class="btn-primary">Ver jogo</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div> <!-- 16/09 -->
+
+        <section class="cta">
+            <div class="site-container">
+                <h2>Pronto para sua próxima aventura?</h2>
+                <p>Explore nossos jogos e descubra os mundos que estamos criando.</p>
+                <button class="btn-primary">Explorar os jogos</button>
+            </div>
         </section>
 
         <!-- Aqui eu não garanto o código -->
 
-        <section class="faq">
-            <h2>Perguntas frequentes</h2>
+        <div class="site-container">
 
-            <details class="faq-card">
-                <summary>Que tipo de jogos vocês criam?</summary>
-                <p>
-                    Criamos jogos independentes de pequena e média escala,
-                    explorando diferentes gêneros e estilos.
-                </p>
-            </details>
+            <section class="faq">
+                <h2>Perguntas frequentes</h2>
 
-            <details class="faq-card">
-                <summary>Onde posso jogar os jogos?</summary>
-                <p>
-                    Nossos jogos estão disponíveis em diferentes plataformas,
-                    dependendo de cada projeto.
-                </p>
-            </details>
+                <details class="faq-card">
+                    <summary>Que tipo de jogos vocês criam?</summary>
+                    <p>
+                        Criamos jogos independentes de pequena e média escala,
+                        explorando diferentes gêneros e estilos.
+                    </p>
+                </details>
 
-            <details class="faq-card">
-                <summary>Vocês estão desenvolvendo algum jogo novo?</summary>
-                <p>
-                    Sim! Lumenfall é um dos nossos projetos atualmente em desenvolvimento.
-                </p>
-            </details>
-        </section>
+                <details class="faq-card">
+                    <summary>Onde posso jogar os jogos?</summary>
+                    <p>
+                        Nossos jogos estão disponíveis em diferentes plataformas,
+                        dependendo de cada projeto.
+                    </p>
+                </details>
+
+                <details class="faq-card">
+                    <summary>Vocês estão desenvolvendo algum jogo novo?</summary>
+                    <p>
+                        Sim! Lumenfall é um dos nossos projetos atualmente em desenvolvimento.
+                    </p>
+                </details>
+            </section>
+
+        </div>
 
     </main>
 
