@@ -79,26 +79,18 @@ h3 {
    TODO: identidade visual definitiva (logo, cores, sombras)
 ----------------------------------------- */
 body {
-    /* Remova o ponto '.' se for a tag body */
     margin: 0;
-    /* 
-       Aumentamos o padding do topo para empurrar o conteúdo para baixo.
-       Como seu header tem uma altura variável baseada no espaçamento padrão,
-       um valor entre 120px e 160px costuma ser o ideal.
-    */
-    padding-top: 120px;
 }
 
 .header {
     display: flex;
     justify-content: center;
     position: fixed;
-    /* Força a fixação no topo */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 99999;
-    /* Fica na frente de absolutamente tudo */
+    z-index: 1000;
+    pointer-events: none;
 }
 
 .topbar {
@@ -114,6 +106,7 @@ body {
 
     /* Afasta a barra do topo do navegador e centraliza */
     margin: var(--espacamento-padrao) auto;
+    pointer-events: auto;
 
     /* Efeito de desfoque opcional para não misturar os textos atrás */
     backdrop-filter: blur(10px);
@@ -185,6 +178,27 @@ body {
     color: var(--cor-texto-secundario);
 }
 
+/* Shared title variants: compact for introduction/about, large for sections. */
+.section-title {
+    color: var(--cor-primaria);
+    text-align: center;
+    line-height: 1;
+    margin: 0 0 20px;
+}
+
+.section-title--intro {
+    font-size: 28px;
+}
+
+.section-title--section {
+    font-size: 40px;
+}
+
+/* Único componente responsável pelo espaçamento vertical das seções. */
+.section-spacing {
+    padding-block: 35px;
+}
+
 /* -----------------------------------------
    Main
    TODO: layout geral, grid/flex das seções, cards
@@ -202,7 +216,7 @@ main {
     /* 16/09 */
     margin: 0 auto;
     /* 16/09 */
-    padding: 1rem;
+    /* padding: 25px 0; */
     /* 16/09 */
 }
 
@@ -334,18 +348,90 @@ button {
    Aqui eu não garanto o código
 ----------------------------------------- */
 .faq-card {
-    border-radius: 16px;
-    padding: 20px;
-    background: var(--card-bg);
+    width: min(100%, 860px);
+    margin: 0 auto 0.85rem;
+    border: 1px solid rgba(245, 243, 238, 0.12);
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    background: #151923;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    transition: border-color 0.2s ease, background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.faq {
+    width: min(100%, 980px);
+    margin: 0 auto;
+}
+
+.faq h2 {
+    text-align: center;
 }
 
 .faq-card summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 68px;
+    padding: 1.15rem 1.35rem;
     cursor: pointer;
-    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 1rem;
+    font-weight: 600;
+    list-style: none;
+}
+
+.faq-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-card summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: var(--cor-destaque);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.faq-card[open] {
+    border-color: rgba(230, 57, 50, 0.65);
+    background: #1a1f2b;
+}
+
+.faq-card[open] summary::after {
+    transform: rotate(45deg);
 }
 
 .faq-card p {
-    margin-top: 16px;
+    margin: 0;
+    padding: 0 1.35rem 1.25rem;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .faq {
+        margin: 0 auto;
+    }
+
+    .faq h2 {
+        margin-bottom: 20px;
+    }
+
+    .faq-card summary {
+        min-height: 62px;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-card p {
+        padding: 0 1rem 1rem;
+    }
 }
 
 
@@ -370,14 +456,9 @@ button {
     gap: 50px;
 }
 
-.home-studio-introduction-text {
+.home-introduction-content {
     text-align: center;
     width: 650px;
-}
-
-.home-studio-introduction-text .h2 {
-    font-size: 100px;
-    line-height: 0.5;
 }
 
 .home-studio-introduction-image {
@@ -388,12 +469,12 @@ button {
     height: 300px;
 }
 
-.astronaut-image {
+.home-introduction-image {
     margin-top: 50px;
     height: 200px;
 }
 
-.home-studio-introduction-buttons {
+.home-introduction-actions {
     display: flex;
     margin-top: 20px;
     justify-content: center;
@@ -426,12 +507,12 @@ button {
     width: 175px;
 }
 
-.home-about-studio-text {
+.home-about-content {
     text-align: center;
     width: 575px;
 }
 
-.destaque-jogos {
+.home-featured-game {
     background-image: url("../imagens/lumenfall-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -441,8 +522,7 @@ button {
 }
 
 .home-highlights {
-    padding-top: 50px;
-    margin: 0 150px 0 150px;
+    margin: 0 150px;
 }
 
 .home-highlights-logo {
@@ -451,7 +531,6 @@ button {
 
 .home-games-text {
     text-align: center;
-    padding: 30px 0 30px 0;
 }
 
 .home-games-grid {
@@ -551,7 +630,6 @@ button {
     background-position: center;
     height: 200px;
     text-align: center;
-    padding-top: 30px;
 }
 
 .cta .btn-primary {
@@ -560,12 +638,75 @@ button {
 
 
 .home-hero {
-    background-image: url("../imagens/background-hero.jpg");
+    background-image: url("../imagens/background-hero.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     aspect-ratio: 3 / 1;
     width: 100%;
     height: auto;
+    position: relative;
+    z-index: 0;
 }
+
+.footer {
+    height: 200px;
+    border-top: 4px solid rgba(245, 243, 238, 0.18);
+}
+
+.footer .footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: -70px;
+    margin-left: 30px;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.footer .footer-links ul li a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+.footer .footer-content h3 {
+    font-size: 50px;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    color: var(--cor-primaria);
+    line-height: 1;
+}
+
+.footer .footer-email-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .footer-email-container a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+.footer .footer-content-bottom {
+    padding-bottom: 40px;
+}
+
 
