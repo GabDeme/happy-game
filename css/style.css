@@ -1,33 +1,17 @@
-/* Alterações incorporadas da versão atualizada em 14/09/2026. */
-/* =========================================
-   HAPPY GAME - style.css
-   Estrutura inicial do projeto
-   ========================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Luckiest+Guy&display=swap');
-/* Feito em 14/09/2026 */
+
 
 /* -----------------------------------------
    Variáveis CSS
-   TODO: definir identidade visual (cores, fontes, espaçamentos)
 ----------------------------------------- */
 :root {
     --cor-primaria: #F5F3EE;
-    /* Feito em 14/09/2026 */
     --cor-secundaria: #0B0D12;
-    /* Feito em 14/09/2026 */
     --cor-texto-secundario: #A9AFBA;
-    /* Feito em 14/09/2026 */
     --cor-destaque: #E63932;
-    /* Feito em 14/09/2026 */
     --fonte-principal: 'Fredoka', sans-serif;
-    /* Feito em 14/09/2026 */
     --espacamento-padrao: 1rem;
-
-    /* Topbar */
-    /* --topbar-bg: rgba(245, 243, 238, 0.12); */
     --topbar-radius: 12px;
-    /* --logo-border: rgba(245, 243, 238, 0.35); */
 }
 
 /* -----------------------------------------
@@ -41,9 +25,9 @@
 
 /* -----------------------------------------
    Body
-   TODO: tipografia definitiva
 ----------------------------------------- */
 body {
+    margin: 0;
     font-family: var(--fonte-principal);
     color: var(--cor-primaria);
     background-color: var(--cor-secundaria);
@@ -63,7 +47,6 @@ p {
 }
 
 h1 {
-    /* Luckiest Guy está sendo usado nos títulos, mas essa escolha ainda está em avaliação. */
     font-family: 'Luckiest Guy', cursive;
     font-weight: 400;
     color: var(--cor-primaria);
@@ -74,15 +57,138 @@ h3 {
     color: var(--cor-primaria);
 }
 
-/* -----------------------------------------
-   Header / Topbar
-   TODO: identidade visual definitiva (logo, cores, sombras)
------------------------------------------ */
-body {
-    margin: 0;
+a {
+    color: var(--cor-primaria);
 }
 
-.header {
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* -----------------------------------------
+   Título Principal
+----------------------------------------- */
+.page-main-title {
+    font-size: 60px;
+    text-align: center;
+    line-height: 1;
+    /* margin-bottom: 100px; */
+    padding-top: 250px;
+}
+
+@media (max-width: 1400px) {
+    .page-main-title {
+        padding-top: 190px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-main-title {
+        font-size: 55px;
+        padding-top: 170px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-main-title {
+        font-size: 43px;
+        padding-top: 140px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-main-title {
+        font-size: 30px;
+        padding-top: 120px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-main-title {
+        font-size: 20px;
+        padding-top: 120px;
+        margin-bottom: 0;
+    }
+}
+
+/* -----------------------------------------
+   Título Segundário
+----------------------------------------- */
+.section-title {
+    color: var(--cor-primaria);
+    text-align: center;
+    line-height: 1;
+    margin: 0 0 20px;
+}
+
+.section-title--intro {
+    font-size: 28px;
+}
+
+.section-title--section {
+    font-size: 40px;
+}
+
+@media (max-width: 768px) {
+    .section-title--intro {
+        font-size: 20px;
+    }
+
+    .section-title--section {
+        font-size: 30px;
+    }
+}
+
+/* -----------------------------------------
+   Botões
+----------------------------------------- */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+    color: var(--cor-primaria);
+    background-color: var(--cor-destaque);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: #FB0000;
+}
+
+.btn-secondary {
+    color: var(--cor-destaque);
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-destaque);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    color: var(--cor-destaque);
+    background-color: #A9AFBA;
+    border-color: #FB0000;
+}
+
+/* -----------------------------------------
+   Topbar
+----------------------------------------- */
+header {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -113,49 +219,24 @@ body {
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* Caixa reservada para a logo da desenvolvedora */
-.topbar .logo {
+.topbar .studio-logo {
     flex-shrink: 0;
     width: 60px;
     height: 60px;
     border-radius: 4px;
     display: flex;
-    /* Feito em 14/09/2026 */
     align-items: center;
-    /* Feito em 14/09/2026 */
     justify-content: center;
-    /* Feito em 14/09/2026 */
     overflow: hidden;
-    /* Feito em 14/09/2026 */
 }
 
-.topbar .logo img {
+.topbar .studio-logo img {
     display: block;
     width: 100%;
-    /* Feito em 14/09/2026 */
     height: 100%;
-    /* Feito em 14/09/2026 */
     object-fit: contain;
-    /* Feito em 14/09/2026 */
 }
 
-/* Título oculto visualmente, mantido para acessibilidade/SEO */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* -----------------------------------------
-   Nav
-   TODO: estados hover/active, indicador de página ativa
------------------------------------------ */
 .topbar nav {
     flex: 1;
 }
@@ -178,174 +259,132 @@ body {
     color: var(--cor-texto-secundario);
 }
 
-/* Shared title variants: compact for introduction/about, large for sections. */
-.section-title {
-    color: var(--cor-primaria);
-    text-align: center;
-    line-height: 1;
-    margin: 0 0 20px;
-}
-
-.section-title--intro {
-    font-size: 28px;
-}
-
-.section-title--section {
-    font-size: 40px;
-}
-
-/* Único componente responsável pelo espaçamento vertical das seções. */
-.section-spacing {
-    padding-block: 35px;
-}
-
-/* -----------------------------------------
-   Main
-   TODO: layout geral, grid/flex das seções, cards
------------------------------------------ */
-main {
-    padding: 0;
-    /* 16/09 */
-}
-
-.site-container {
-    /* 16/09 */
-    width: 1300px;
-    /* 16/09 */
-    max-width: 100%;
-    /* 16/09 */
-    margin: 0 auto;
-    /* 16/09 */
-    /* padding: 25px 0; */
-    /* 16/09 */
-}
-
-/* -----------------------------------------
-   Footer
-   TODO: layout e conteúdo final do rodapé
------------------------------------------ */
-footer {
-    padding: var(--espacamento-padrao);
-    text-align: center;
-}
-
-/* -----------------------------------------
-   Links (geral)
------------------------------------------ */
-a {
-    color: var(--cor-primaria);
-}
-
-/* -----------------------------------------
-   Formulário
-   TODO: estilização definitiva dos campos
------------------------------------------ */
-form div {
-    margin-bottom: var(--espacamento-padrao);
-}
-
-label {
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid var(--cor-destaque);
-}
-
-/* -----------------------------------------
-   Botão
-   TODO: estilização definitiva e animações
------------------------------------------ */
-button {
-    /* Feito em 14/09/2026 */
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-    /* Feito em 14/09/2026 */
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.btn-primary {
-    /* Feito em 14/09/2026 */
-    color: var(--cor-primaria);
-    background-color: var(--cor-destaque);
-    border: 2px solid transparent;
-}
-
-.btn-primary:hover,
-.btn-primary:focus-visible {
-    background-color: #FB0000;
-}
-
-.btn-secondary {
-    /* Feito em 14/09/2026 */
-    color: var(--cor-destaque);
-    background-color: var(--cor-primaria);
-    border: 2px solid var(--cor-destaque);
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-    color: var(--cor-destaque);
-    background-color: #A9AFBA;
-    border-color: #FB0000;
-}
-
-/* -----------------------------------------
-   Imagens
-   TODO: estilização de imagens dos jogos
------------------------------------------ */
-
-/* -----------------------------------------
-   Animações
-   TODO: transições e efeitos
------------------------------------------ */
-
-/* -----------------------------------------
-   Responsividade
-   TODO: ajustes adicionais para outros breakpoints
------------------------------------------ */
 @media (max-width: 768px) {
     .topbar {
         flex-wrap: wrap;
         justify-content: center;
+        width: 650px;
+        padding: 0;
+        margin-top: 20px;
     }
 
     .topbar nav ul {
-        flex-direction: column;
         align-items: center;
         gap: 0.75rem;
     }
+}
 
-    .home-games-grid {
-        /* 16/09 */
-        margin: 0 20px;
-        /* 16/09 */
-        justify-content: center;
-        /* 16/09 */
-        flex-wrap: wrap;
-        /* 16/09 */
+/* -----------------------------------------
+   Main
+----------------------------------------- */
+main {
+    padding: 0;
+}
+
+.section-container {
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.section-spacing {
+    padding-block: 65px;
+}
+
+@media (max-width: 1400px) {
+    .section-container {
+        width: 1200px;
     }
+}
 
-    .home-game-card {
-        /* 16/09 */
-        width: min(100%, 260px);
-        /* 16/09 */
-        flex-basis: 260px;
-        /* 16/09 */
+@media (max-width: 1200px) {
+    .section-container {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-container {
+        width: 780px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        width: 580px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-container {
+        width: 380px;
     }
 }
 
 
+/* -----------------------------------------
+   Heros
+----------------------------------------- */
+.hero {
+    background-image: url("../imagens/background-hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 3 / 1;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
 
+/* Hero da Página de Jogos */
+.hero--home {
+    background-image: url("../imagens/background-hero.png");
+}
+
+/* Hero da Página de Projetos */
+.hero--project {
+    background-image: url("../imagens/background-hero.png");
+}
+
+/* Hero da Página de Jogos */
+.hero--games {
+    background-image: url("../imagens/background-hero.png");
+}
+
+/* Hero da Página de Contato */
+.hero--contact {
+    background-image: url("../imagens/background-hero.png");
+}
+
+
+/* @media (max-width: 768px) {
+    home-hero {
+        background-image: url("../imagens/background-hero.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+} */
 
 /* -----------------------------------------
-   Aqui eu não garanto o código
+   CTA
+----------------------------------------- */
+.cta {
+    background-image: url("../imagens/fundo-espacial.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    text-align: center;
+}
+
+.cta .btn-primary {
+    margin-top: 20px;
+}
+
+/* -----------------------------------------
+   FAQ
 ----------------------------------------- */
 .faq-card {
     width: min(100%, 860px);
@@ -434,26 +473,89 @@ button {
     }
 }
 
-
-
-/* aqui eu não garanto */
-
-.home-main-title {
-    font-size: 60px;
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
+footer {
+    padding: var(--espacamento-padrao);
     text-align: center;
-    line-height: 1;
-    margin-bottom: 100px;
-    padding-top: 250px;
+    height: 200px;
+    border-top: 4px solid rgba(245, 243, 238, 0.18);
 }
 
-.home-studio-introduction {
+footer .footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: -70px;
+    margin-left: 30px;
+}
+
+footer .footer-links nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+footer .footer-links nav li a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+footer .footer-content h3 {
+    font-size: 50px;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    color: var(--cor-primaria);
+    line-height: 1;
+}
+
+footer .footer-email-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .footer-email-container a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+footer .footer-content-bottom {
+    padding-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    footer .footer-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* -----------------------------------------
+   Home - Introdução
+----------------------------------------- */
+.home-introduction {
     display: flex;
     max-width: 1000px;
-    /* 16/09 */
     margin: 0 auto;
-    /* 16/09 */
     align-items: center;
     gap: 50px;
+    padding-bottom: 30px;
 }
 
 .home-introduction-content {
@@ -461,7 +563,14 @@ button {
     width: 650px;
 }
 
-.home-studio-introduction-image {
+.home-introduction-actions {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.home-introduction-image-container {
     background-image: url("../imagens/fundo-espacial-liquido.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -474,35 +583,46 @@ button {
     height: 200px;
 }
 
-.home-introduction-actions {
-    display: flex;
-    margin-top: 20px;
-    justify-content: center;
-    gap: 50px;
+@media (max-width: 768px) {
+    .home-introduction {
+        display: flex;
+        flex-direction: column;
+        max-width: 550px;
+        gap: 20px;
+    }
+
+    .home-introduction-content {
+        order: 2;
+        text-align: center;
+        width: 550px;
+    }
+
+    .home-introduction-image {
+        order: 1;
+    }
 }
 
-.home-about-studio {
+/* -----------------------------------------
+   Home - Sobre
+----------------------------------------- */
+.home-about {
     display: flex;
     max-width: 1000px;
-    /* 16/09 */
     margin: 0 auto;
-    /* 16/09 */
     align-items: center;
     gap: 50px;
-
 }
 
-.home-about-studio-image {
+.home-about-image-container {
     background-image: url("../imagens/fundo-espacial-liquido.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 375px;
     height: 300px;
-    /* margin-top: 40px; */
 }
 
-.telescope-image {
+.home-about-image {
     margin: 40px 100px;
     width: 175px;
 }
@@ -512,12 +632,34 @@ button {
     width: 575px;
 }
 
+@media (max-width: 768px) {
+    .home-about {
+        display: flex;
+        flex-direction: column;
+        max-width: 550px;
+        gap: 20px;
+    }
+
+    .home-about-content {
+        order: 2;
+        text-align: center;
+        width: 485px;
+    }
+
+    .home-about-image {
+        order: 1;
+    }
+}
+
+/* -----------------------------------------
+   Home - Jogo em Destaque
+----------------------------------------- */
 .home-featured-game {
     background-image: url("../imagens/lumenfall-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 300px;
+    height: auto;
     text-align: center;
 }
 
@@ -529,6 +671,10 @@ button {
     width: 250px;
 }
 
+/* -----------------------------------------
+   Home - Jogos
+----------------------------------------- */
+
 .home-games-text {
     text-align: center;
 }
@@ -536,177 +682,87 @@ button {
 .home-games-grid {
     display: flex;
     flex-wrap: nowrap;
-    /* 16/09 */
     margin: 0;
-    /* 16/09 */
     gap: 20px;
-    /* 16/09 */
     justify-content: space-between;
-    /* 16/09 */
-
 }
 
 .home-game-card {
     width: calc((85% - 40px) / 3);
-    /* 16/09 */
     flex: 0 0 calc((85% - 40px) / 3);
-    /* 16/09 */
     overflow: hidden;
-    /* 16/09 */
     border-radius: 20px;
-    /* 16/09 */
     background: rgba(245, 243, 238, 0.12);
-    /* 16/09 */
     backdrop-filter: blur(10px);
-    /* 16/09 */
     -webkit-backdrop-filter: blur(10px);
-    /* 16/09 */
     border: 1px solid rgba(245, 243, 238, 0.18);
-    /* 16/09 */
 }
 
 .home-game-card-image {
     display: block;
-    /* 16/09 */
     width: 300px;
-    /* 16/09 */
     height: 225px;
-    /* 16/09 */
     margin: 18px auto 0;
-    /* 16/09 */
     border-radius: 12px;
-    /* 16/09 */
     object-fit: cover;
-    /* 16/09 */
 }
 
 .home-game-card-content {
     padding: 20px 18px 18px;
-    /* 16/09 */
 }
 
 .home-game-card h3 {
     font-size: 1.35rem;
-    /* 16/09 */
     line-height: 1.1;
-    /* 16/09 */
 }
 
 .home-game-card span {
     display: block;
-    /* 16/09 */
     margin-top: 2px;
-    /* 16/09 */
     color: var(--cor-primaria);
-    /* 16/09 */
     font-size: 1rem;
-    /* 16/09 */
 }
 
 .home-game-card p {
     margin-top: 8px;
-    /* 16/09 */
     min-height: 124px;
-    /* 16/09 */
 }
 
 .home-game-card .btn-primary {
     display: block;
-    /* 16/09 */
     width: 80%;
-    /* 16/09 */
     margin: 16px auto 0;
-    /* 16/09 */
     font-size: 1.05rem;
-    /* 16/09 */
 }
 
+@media (max-width: 768px) {
+    .home-games-grid {
+        margin: 0 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-
-.cta {
-    background-image: url("../imagens/fundo-espacial.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 200px;
-    text-align: center;
+    .home-game-card {
+        width: min(100%, 260px);
+        flex-basis: 260px;
+    }
 }
 
-.cta .btn-primary {
-    margin-top: 20px;
+/* -----------------------------------------
+   Formulário
+----------------------------------------- */
+form div {
+    margin-bottom: var(--espacamento-padrao);
 }
 
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
 
-.home-hero {
-    background-image: url("../imagens/background-hero.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    aspect-ratio: 3 / 1;
+input,
+textarea {
     width: 100%;
-    height: auto;
-    position: relative;
-    z-index: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-destaque);
 }
-
-.footer {
-    height: 200px;
-    border-top: 4px solid rgba(245, 243, 238, 0.18);
-}
-
-.footer .footer-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer .footer-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin-top: -70px;
-    margin-left: 30px;
-}
-
-.footer .footer-links ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.footer .footer-links ul li a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-}
-
-.footer .footer-content h3 {
-    font-size: 50px;
-    font-family: 'Luckiest Guy', cursive;
-    font-weight: 400;
-    color: var(--cor-primaria);
-    line-height: 1;
-}
-
-.footer .footer-email-container {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.footer .footer-email-container a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-}
-
-.footer .footer-content-bottom {
-    padding-bottom: 40px;
-}
-
-
