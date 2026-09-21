@@ -11,7 +11,6 @@
     --cor-destaque: #E63932;
     --fonte-principal: 'Fredoka', sans-serif;
     --espacamento-padrao: 1rem;
-    --topbar-radius: 12px;
 }
 
 /* -----------------------------------------
@@ -84,6 +83,10 @@ a {
     padding-top: 250px;
 }
 
+.hero .page-subtitle {
+    text-align: center
+}
+
 @media (max-width: 1400px) {
     .page-main-title {
         padding-top: 190px;
@@ -153,18 +156,17 @@ a {
 /* -----------------------------------------
    Botões
 ----------------------------------------- */
-button {
+.btn-primary {
+    display: inline-block;
     padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
-    border-radius: 20px;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.btn-primary {
+    text-decoration: none;
     color: var(--cor-primaria);
     background-color: var(--cor-destaque);
     border: 2px solid transparent;
+    border-radius: 20px;
 }
 
 .btn-primary:hover,
@@ -173,9 +175,13 @@ button {
 }
 
 .btn-secondary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
     color: var(--cor-destaque);
     background-color: var(--cor-primaria);
     border: 2px solid var(--cor-destaque);
+    border-radius: 20px;
+    text-decoration: none;
 }
 
 .btn-secondary:hover,
@@ -206,7 +212,7 @@ header {
     height: 80px;
     width: 1114px;
     padding: 0.75rem 1.5rem;
-    border-radius: var(--topbar-radius);
+    border-radius: 12px;
     background-color: rgba(245, 243, 238, 0.12);
     box-sizing: border-box;
 
@@ -214,7 +220,7 @@ header {
     margin: var(--espacamento-padrao) auto;
     pointer-events: auto;
 
-    /* Efeito de desfoque opcional para não misturar os textos atrás */
+    /* Efeito de desfoque dos conteúdos de trás */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -263,14 +269,26 @@ header {
     .topbar {
         flex-wrap: wrap;
         justify-content: center;
-        width: 650px;
-        padding: 0;
+        width: clamp(300px, 85vw, 650px);
+        height: auto;
+        padding: 0.75rem 1rem;
         margin-top: 20px;
+        gap: clamp(0.75rem, 3vw, 2rem);
+    }
+
+    .topbar .studio-logo {
+        width: clamp(45px, 8vw, 60px);
+        height: clamp(45px, 8vw, 60px);
     }
 
     .topbar nav ul {
         align-items: center;
-        gap: 0.75rem;
+        gap: clamp(0.5rem, 3vw, 1.5rem);
+        padding: 0;
+    }
+
+    .topbar nav a {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
     }
 }
 
@@ -291,6 +309,7 @@ main {
     padding-block: 65px;
 }
 
+/* Notebook / telas menores */
 @media (max-width: 1400px) {
     .section-container {
         width: 1200px;
@@ -303,6 +322,7 @@ main {
     }
 }
 
+/* Tablet */
 @media (max-width: 992px) {
     .section-container {
         width: 780px;
@@ -315,12 +335,14 @@ main {
     }
 }
 
+/* Celular */
 @media (max-width: 576px) {
     .section-container {
-        width: 380px;
+        width: 100%;
+        padding-inline: 20px;
+        box-sizing: border-box;
     }
 }
-
 
 /* -----------------------------------------
    Heros
@@ -575,17 +597,20 @@ footer .footer-content-bottom {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    width: 375px;
     height: 300px;
+    flex-shrink: 0;
 }
 
 .home-introduction-image {
-    margin-top: 50px;
     height: 200px;
+    width: auto;
+    margin: 50px auto 0;
 }
 
+/* Tablet / celular */
 @media (max-width: 768px) {
     .home-introduction {
-        display: flex;
         flex-direction: column;
         max-width: 550px;
         gap: 20px;
@@ -594,23 +619,60 @@ footer .footer-content-bottom {
     .home-introduction-content {
         order: 2;
         text-align: center;
-        width: 550px;
+        width: 100%;
+        max-width: 550px;
     }
 
     .home-introduction-image {
-        order: 1;
+        height: clamp(140px, 35vw, 200px);
+        margin-top: clamp(30px, 7vw, 50px);
+    }
+
+    .home-introduction-actions {
+        gap: clamp(20px, 6vw, 50px);
+    }
+}
+
+/* Celular */
+@media (max-width: 576px) {
+    .home-introduction {
+        width: 100%;
+        max-width: none;
+        padding: 0 20px 30px;
+        box-sizing: border-box;
+    }
+
+    .home-introduction-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .home-introduction-image-container {
+        width: clamp(250px, 65vw, 350px);
+        height: clamp(200px, 52vw, 300px);
+    }
+
+    .home-introduction-image {
+        height: clamp(140px, 35vw, 200px);
+        margin-top: clamp(30px, 7vw, 50px);
+    }
+
+    .home-introduction-actions {
+        gap: clamp(20px, 6vw, 50px);
     }
 }
 
 /* -----------------------------------------
    Home - Sobre
 ----------------------------------------- */
+
 .home-about {
     display: flex;
     max-width: 1000px;
     margin: 0 auto;
     align-items: center;
     gap: 50px;
+    padding: 0 20px;
 }
 
 .home-about-image-container {
@@ -620,30 +682,30 @@ footer .footer-content-bottom {
     background-position: center;
     width: 375px;
     height: 300px;
+    flex-shrink: 0;
 }
 
 .home-about-image {
-    margin: 40px 100px;
     width: 175px;
+    margin: 40px 100px;
 }
 
 .home-about-content {
     text-align: center;
-    width: 575px;
+    width: 100%;
+    max-width: 575px;
 }
 
+/* Tablet / celular */
 @media (max-width: 768px) {
     .home-about {
-        display: flex;
         flex-direction: column;
-        max-width: 550px;
         gap: 20px;
+        max-width: 550px;
     }
 
     .home-about-content {
         order: 2;
-        text-align: center;
-        width: 485px;
     }
 
     .home-about-image {
@@ -651,10 +713,37 @@ footer .footer-content-bottom {
     }
 }
 
+/* Celular */
+@media (max-width: 576px) {
+    .home-about {
+        width: 100%;
+        max-width: none;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .home-about-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .home-about-image-container {
+        width: clamp(250px, 65vw, 375px);
+        height: clamp(200px, 52vw, 300px);
+    }
+
+    .home-about-image {
+        display: block;
+        width: clamp(120px, 30vw, 150px);
+        margin: clamp(25px, 7vw, 40px) auto;
+    }
+}
+
+
 /* -----------------------------------------
    Home - Jogo em Destaque
 ----------------------------------------- */
-.home-featured-game {
+.home-highlighted-game {
     background-image: url("../imagens/lumenfall-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -663,33 +752,27 @@ footer .footer-content-bottom {
     text-align: center;
 }
 
-.home-highlights {
-    margin: 0 150px;
-}
-
-.home-highlights-logo {
+.home-highlighted-logo {
     width: 250px;
 }
 
 /* -----------------------------------------
    Home - Jogos
 ----------------------------------------- */
-
 .home-games-text {
     text-align: center;
 }
 
 .home-games-grid {
     display: flex;
-    flex-wrap: nowrap;
-    margin: 0;
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .home-game-card {
-    width: calc((85% - 40px) / 3);
-    flex: 0 0 calc((85% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+    flex: 0 1 calc((100% - 40px) / 3);
     overflow: hidden;
     border-radius: 20px;
     background: rgba(245, 243, 238, 0.12);
@@ -702,6 +785,7 @@ footer .footer-content-bottom {
     display: block;
     width: 300px;
     height: 225px;
+    max-width: calc(100% - 36px);
     margin: 18px auto 0;
     border-radius: 12px;
     object-fit: cover;
@@ -733,36 +817,451 @@ footer .footer-content-bottom {
     width: 80%;
     margin: 16px auto 0;
     font-size: 1.05rem;
+    text-align: center;
+    align-content: center;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
     .home-games-grid {
-        margin: 0 20px;
         justify-content: center;
         flex-wrap: wrap;
     }
 
     .home-game-card {
-        width: min(100%, 260px);
-        flex-basis: 260px;
+        width: clamp(280px, 30vw, 340px);
+        flex: 0 1 clamp(280px, 30vw, 340px);
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .home-games-grid {
+        gap: 20px;
+    }
+
+    .home-game-card {
+        width: min(100%, 320px);
+        flex-basis: 320px;
+    }
+}
+
+
+/* Celular */
+@media (max-width: 576px) {
+    .home-games-grid {
+        width: 100%;
+    }
+
+    .home-game-card {
+        width: 100%;
+        max-width: 320px;
+        flex-basis: 100%;
+    }
+
+    .home-game-card-image {
+        width: clamp(220px, 80vw, 300px);
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+/* -----------------------------------------
+   Projeto - Sobre
+----------------------------------------- */
+.project-about {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../imagens/comet-background.jpg');
+    /* background-image: url("../imagens/comet-background.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* aspect-ratio: 16 / 7; */
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
+
+.project-about-card {
+    /* display: flex; */
+    align-items: center;
+    gap: 2rem;
+    padding: 8%;
+    border-radius: 12px;
+    background-color: rgba(245, 243, 238, 0.12);
+    box-sizing: border-box;
+
+    /* Afasta a barra do topo do navegador e centraliza */
+    margin: var(--espacamento-padrao) auto;
+    pointer-events: auto;
+
+    /* Efeito de desfoque dos conteúdos de trás */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* -----------------------------------------
+   Projeto - Missão
+----------------------------------------- */
+.project-mission {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 30px;
+}
+
+.project-mission-image-container {
+    background-image: url("../imagens/fundo-espacial-liquido.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 375px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.project-mission-image {
+    width: 175px;
+    margin: 40px 100px;
+}
+
+
+.project-mission-content {
+    text-align: center;
+    width: 650px;
+}
+
+/* Tablet / celular */
+@media (max-width: 768px) {
+    .project-mission {
+        flex-direction: column;
+        max-width: 550px;
+        gap: 20px;
+    }
+
+    .project-mission-content {
+        order: 2;
+        text-align: center;
+        width: 100%;
+        max-width: 550px;
+    }
+
+    .project-mission-image-container {
+        order: 1;
+    }
+
+}
+
+/* Celular */
+@media (max-width: 576px) {
+    .project-mission {
+        width: 100%;
+        max-width: none;
+        padding: 0 20px 30px;
+        box-sizing: border-box;
+    }
+
+    .project-mission-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .project-mission-image-container {
+        width: clamp(250px, 65vw, 350px);
+        height: clamp(200px, 52vw, 300px);
+    }
+
+    .project-mission-image {
+        display: block;
+        width: auto;
+        height: clamp(140px, 35vw, 200px);
+        margin-top: clamp(30px, 7vw, 120px);
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 /* -----------------------------------------
-   Formulário
+   Projeto - Como desenvolvemos nossos jogos
 ----------------------------------------- */
-form div {
+.project-principles {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.project-principles-text {
+    text-align: center;
+}
+
+.project-principles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-inline: auto;
+}
+
+.project-principle-card {
+    width: 250px;
+    flex: 0 0 250px;
+
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(245, 243, 238, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 243, 238, 0.18);
+}
+
+.project-principle-card div {
+    height: 50px;
+}
+
+.project-principle-card h3 {
+    margin: 20px 20px;
+    font-size: 1.35rem;
+    line-height: 1.1;
+}
+
+.project-principle-card p {
+    margin: 10px 20px;
+    min-height: 124px;
+}
+
+@media (min-width: 1200px) {
+
+    .project-principles-grid {
+        max-width: 1060px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .project-principles-grid {
+        max-width: 790px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .project-principles-grid {
+        max-width: 520px;
+    }
+}
+
+/* Celular */
+@media (max-width: 576px) {
+    .project-principles-grid {
+        max-width: 250px;
+    }
+}
+
+/* -----------------------------------------
+   Jogos - Lista
+----------------------------------------- */
+.games-catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.game-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 2rem;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.game-entry-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+}
+
+.game-entry-image-container {
+    max-width: 300px;
+}
+
+.game-entry-image {
+    max-width: 260px;
+    border-radius: 20px;
+}
+
+.game-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.game-entry-header h3 {
+    margin: 0;
+}
+
+.game-specs {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-specs li {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.game-specs strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 2px;
+}
+
+.game-status {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.game-status--dev {
+    background-color: rgba(250, 199, 117, 0.15);
+    color: #FAC775;
+}
+
+.game-status--released {
+    background-color: rgba(151, 196, 89, 0.15);
+    color: #97C459;
+}
+
+.game-entry-content .btn-primary {
+    display: flex;
+}
+
+
+@media (max-width: 768px) {
+    .game-entry {
+        flex-direction: column;
+        gap: 16px;
+        padding: 1.5rem;
+    }
+
+    .game-entry-image-container {
+        align-self: center;
+        justify-content: center;
+    }
+
+    .game-entry-header {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .game-specs {
+        gap: 20px;
+    }
+}
+
+/* -----------------------------------------
+   Contato - Formulário
+----------------------------------------- */
+.contact-card {
+    width: 50%;
+    align-items: center;
+    gap: 2rem;
+    padding: 8%;
+    border-radius: 12px;
+    background-color: rgba(245, 243, 238, 0.12);
+    box-sizing: border-box;
+
+    /* Afasta a barra do topo do navegador e centraliza */
+    margin: var(--espacamento-padrao) auto;
+    pointer-events: auto;
+
+    /* Efeito de desfoque dos conteúdos de trás */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-card form div {
     margin-bottom: var(--espacamento-padrao);
 }
 
-label {
+.contact-card label {
     display: block;
     margin-bottom: 0.25rem;
 }
 
-input,
-textarea {
+.contact-card input,
+.contact-card textarea {
     width: 100%;
+    height: 60px;
     padding: 0.5rem;
     border: 1px solid var(--cor-destaque);
+    border-radius: 40px;
+    color: #0B0D12;
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.contact-card textarea {
+    height: 200px;
+    padding: 1rem 1.25rem;
+}
+
+.contact-card textarea::placeholder {
+    color: #8a8a8a;
+    font-family: inherit;
+}
+
+.contact-card .btn-primary {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 40px auto 0;
+    font-size: 1.05rem;
+    text-align: center;
+    align-content: center;
+}
+
+/* -----------------------------------------
+   Feedback - Mensagem
+----------------------------------------- */
+.feedback-message {
+    text-align: center;
+}
+
+.feedback-message-actions {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .feedback-message-actions {
+        gap: clamp(20px, 6vw, 50px);
+    }
+}
+
+@media (max-width: 576) {
+    .feedback-message-actions {
+        gap: clamp(20px, 6vw, 50px);
+    }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,77 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="imagens/logo-comet-transparente.png"> <!-- Feito em 14/09/2026 -->
 </head>
+
 <body>
 
-    <header>
-        <h1>Happy Game</h1>
-    </header>
+    <header class="header">
+        <div class="topbar">
+            <div class="studio-logo">
+                <img src="imagens/logo-comet-transparente.png" alt="Logo Little Comet Studio">
+            </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projeto.html">Projeto</a></li>
-            <li><a href="jogos.html">Jogos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projeto.html">Projeto</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
 
-        <section>
-            <!-- TODO: mensagem informando que o formulário foi enviado com sucesso -->
+        <div class="hero">
+            <h1 class="page-main-title">Mensagem enviada!</h1>
+            <p class="page-subtitle">Obrigado por entrar em contato com a Little Comet Studio.</p>
+        </div>
+
+        <section class="feedback-message section-container section-spacing">
+            <div class="feedback-message-container">
+                <h2 class="section-title section-title--section">Sua mensagem decolou.</h2>
+                <p>
+                    Recebemos o seu contato e vamos responder o quanto antes.<br />
+                    Enquanto isso, que tal explorar
+                    um pouco mais do nosso universo?
+                </p>
+                <div class="feedback-message-actions">
+                    <a class="btn-primary" href="index.html">Voltar ao início</a>
+                    <a class="btn-secondary" href="jogos.html">Ver nossos jogos</a>
+                </div>
+            </div>
         </section>
 
     </main>
 
+    <!-- ----------------------------------------
+        Footer
+    ----------------------------------------- -->
     <footer>
-        <p>&copy; 2026 Happy Game</p>
+        <div class="footer-logo-container">
+            <img class="footer-logo" src="imagens/logo-comet-transparente.png" alt="Logo Little Comet Studio">
+        </div>
+        <div class="footer-content">
+            <h3>Little Comet<br />Studio</h3>
+            <p>Um pequeno estúdio com grandes ideias.</p>
+        </div>
+        <div class="footer-links">
+            <nav aria-label="footer">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projeto</a></li>
+                <li><a href="jogos.html">Jogos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </nav>
+        </div>
+        <div class="footer-email-container">
+            <a href="mailto:contato@cometstudio.com">contato@cometstudio.com</a>
+            <a href="mailto:marketing@cometstudio.com">marketing@cometstudio.com</a>
+        </div>
+        <div class="footer-content-bottom">
+            <p>&copy; 2026 Little Comet Studio</p>
+        </div>
     </footer>
-
 </body>
+
 </html>
