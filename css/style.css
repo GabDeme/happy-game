@@ -1,21 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Luckiest+Guy&display=swap');
 
-
-/* -----------------------------------------
-   Variáveis CSS
------------------------------------------ */
 :root {
     --cor-primaria: #F5F3EE;
     --cor-secundaria: #0B0D12;
     --cor-texto-secundario: #A9AFBA;
     --cor-destaque: #E63932;
-    --fonte-principal: 'Fredoka', sans-serif;
     --espacamento-padrao: 1rem;
 }
 
-/* -----------------------------------------
-   Reset básico
------------------------------------------ */
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +19,7 @@
 ----------------------------------------- */
 body {
     margin: 0;
-    font-family: var(--fonte-principal);
+    font-family: 'Fredoka', sans-serif;
     color: var(--cor-primaria);
     background-color: var(--cor-secundaria);
     line-height: 1.5;
@@ -309,7 +301,7 @@ main {
     padding-block: 65px;
 }
 
-/* Notebook / telas menores */
+/* Notebook */
 @media (max-width: 1400px) {
     .section-container {
         width: 1200px;
@@ -383,16 +375,6 @@ main {
 .hero--feedback {
     background-image: url("../imagens/heros/feedback-hero.png");
 }
-
-
-/* @media (max-width: 768px) {
-    home-hero {
-        background-image: url("../imagens/background-hero.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-} */
 
 /* -----------------------------------------
    CTA
@@ -614,7 +596,7 @@ footer .footer-content-bottom {
     margin: 50px auto 0;
 }
 
-/* Tablet / celular */
+/* Tablet */
 @media (max-width: 768px) {
     .home-introduction {
         flex-direction: column;
@@ -671,7 +653,6 @@ footer .footer-content-bottom {
 /* -----------------------------------------
    Home - Sobre
 ----------------------------------------- */
-
 .home-about {
     display: flex;
     max-width: 1000px;
@@ -702,7 +683,7 @@ footer .footer-content-bottom {
     max-width: 575px;
 }
 
-/* Tablet / celular */
+/* Tablet */
 @media (max-width: 768px) {
     .home-about {
         flex-direction: column;
@@ -889,7 +870,6 @@ footer .footer-content-bottom {
 }
 
 .project-about-card {
-    /* display: flex; */
     align-items: center;
     gap: 2rem;
     padding: 8%;
@@ -939,7 +919,7 @@ footer .footer-content-bottom {
     width: 650px;
 }
 
-/* Tablet / celular */
+/* Tablet */
 @media (max-width: 768px) {
     .project-mission {
         flex-direction: column;
