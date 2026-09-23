@@ -1045,6 +1045,10 @@ footer .footer-content-bottom {
     gap: 24px;
 }
 
+.games-list-text {
+    text-align: center;
+}
+
 .game-entry {
     display: flex;
     align-items: flex-start;
