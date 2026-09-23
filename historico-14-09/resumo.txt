@@ -1,8 +1,0 @@
-RESUMO DO PROJETO — 14/09/2026
-
-Imagem: fundo removido da logo, criado imagens/logo.png e aplicada no header.
-Favicon: logo transparente configurada em todas as páginas HTML.
-Visual: fundo #0B0D12, títulos/texto principal #F5F3EE, texto secundário #A9AFBA.
-Header: fundo translúcido.
-Botões: classes .btn-primary e .btn-secondary, radius de 20px e estados hover/focus.
-Tipografia: Luckiest Guy nos títulos (escolha ainda em avaliação) e Fredoka nos textos normais.

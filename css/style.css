@@ -5,6 +5,7 @@
     --cor-secundaria: #0B0D12;
     --cor-texto-secundario: #A9AFBA;
     --cor-destaque: #E63932;
+    --cor-destaque-foco: #FB0000;
     --espacamento-padrao: 1rem;
 }
 
@@ -153,7 +154,7 @@ a {
     padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease;
     text-decoration: none;
     color: var(--cor-primaria);
     background-color: var(--cor-destaque);
@@ -163,7 +164,7 @@ a {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-    background-color: #FB0000;
+    background-color: var(--cor-destaque-foco);
 }
 
 .btn-secondary {
@@ -180,7 +181,7 @@ a {
 .btn-secondary:focus-visible {
     color: var(--cor-destaque);
     background-color: #A9AFBA;
-    border-color: #FB0000;
+    border-color: var(--cor-destaque-foco);
 }
 
 /* -----------------------------------------
@@ -207,12 +208,8 @@ header {
     border-radius: 12px;
     background-color: rgba(245, 243, 238, 0.12);
     box-sizing: border-box;
-
-    /* Afasta a barra do topo do navegador e centraliza */
     margin: var(--espacamento-padrao) auto;
     pointer-events: auto;
-
-    /* Efeito de desfoque dos conteúdos de trás */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -396,20 +393,22 @@ main {
    FAQ
 ----------------------------------------- */
 .faq-card {
-    width: min(100%, 860px);
+    width: 100%;
+    max-width: 860px;
     margin: 0 auto 0.85rem;
-    border: 1px solid rgba(245, 243, 238, 0.12);
     border-radius: 10px;
     padding: 0;
     overflow: hidden;
-    background: #151923;
+    background: rgba(245, 243, 238, 0.12);
+    border: 1px solid rgba(245, 243, 238, 0.18);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
-    transition: border-color 0.2s ease, background-color 0.2s ease,
-        transform 0.2s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .faq {
-    width: min(100%, 980px);
+    width: 100%;
+    max-width: 980px;
     margin: 0 auto;
 }
 
@@ -432,9 +431,6 @@ main {
     list-style: none;
 }
 
-.faq-card summary::-webkit-details-marker {
-    display: none;
-}
 
 .faq-card summary::after {
     content: "+";
@@ -443,16 +439,14 @@ main {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1;
-    transition: transform 0.2s ease;
 }
 
 .faq-card[open] {
-    border-color: rgba(230, 57, 50, 0.65);
-    background: #1a1f2b;
+    border-color: var(--cor-destaque);
 }
 
 .faq-card[open] summary::after {
-    transform: rotate(45deg);
+    content: "-";
 }
 
 .faq-card p {
@@ -827,7 +821,8 @@ footer .footer-content-bottom {
     }
 
     .home-game-card {
-        width: min(100%, 320px);
+        width: 100%;
+        max-width: 320px;
         flex-basis: 320px;
     }
 }
@@ -876,12 +871,8 @@ footer .footer-content-bottom {
     border-radius: 12px;
     background-color: rgba(245, 243, 238, 0.12);
     box-sizing: border-box;
-
-    /* Afasta a barra do topo do navegador e centraliza */
     margin: var(--espacamento-padrao) auto;
     pointer-events: auto;
-
-    /* Efeito de desfoque dos conteúdos de trás */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -1061,7 +1052,7 @@ footer .footer-content-bottom {
     padding: 2rem;
     border: 0.5px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: rgba(245, 243, 238, 0.12);
 }
 
 .game-entry-content {
@@ -1126,12 +1117,10 @@ footer .footer-content-bottom {
 }
 
 .game-status--dev {
-    background-color: rgba(250, 199, 117, 0.15);
     color: #FAC775;
 }
 
 .game-status--released {
-    background-color: rgba(151, 196, 89, 0.15);
     color: #97C459;
 }
 
@@ -1186,12 +1175,8 @@ footer .footer-content-bottom {
     border-radius: 12px;
     background-color: rgba(245, 243, 238, 0.12);
     box-sizing: border-box;
-
-    /* Afasta a barra do topo do navegador e centraliza */
     margin: var(--espacamento-padrao) auto;
     pointer-events: auto;
-
-    /* Efeito de desfoque dos conteúdos de trás */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
