@@ -1132,6 +1132,39 @@ footer .footer-content-bottom {
     display: flex;
 }
 
+.games-table {
+    text-align: center;
+}
+
+.games-table-text {
+    text-align: center;
+}
+
+.games-table-card {
+    align-items: center;
+    border-radius: 12px;
+    background-color: rgba(245, 243, 238, 0.12);
+    box-sizing: border-box;
+    margin: var(--espacamento-padrao) auto;
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+caption {
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border:  0.5px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    text-align: left;
+}
+
+.research-sources {
+    text-align: ;
+}
 
 @media (max-width: 768px) {
     .game-entry {
