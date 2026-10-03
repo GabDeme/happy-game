@@ -337,7 +337,7 @@ main {
    Heros
 ----------------------------------------- */
 .hero {
-    background-image: url("../imagens/heros/home-hero.png");
+    background-image: url("imagens/heros/home-hero.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -350,34 +350,34 @@ main {
 
 /* Hero da Página de Jogos */
 .hero--home {
-    background-image: url("../imagens/heros/home-hero.png");
+    background-image: url("imagens/heros/home-hero.png");
 }
 
 /* Hero da Página de Projetos */
 .hero--project {
-    background-image: url("../imagens/heros/project-hero.png");
+    background-image: url("imagens/heros/project-hero.png");
 }
 
 /* Hero da Página de Jogos */
 .hero--games {
-    background-image: url("../imagens/heros/games-hero.png");
+    background-image: url("imagens/heros/games-hero.png");
 }
 
 /* Hero da Página de Contato */
 .hero--contact {
-    background-image: url("../imagens/heros/contact-hero.png");
+    background-image: url("imagens/heros/contact-hero.png");
 }
 
 /* Hero da Página de Feedback */
 .hero--feedback {
-    background-image: url("../imagens/heros/feedback-hero.png");
+    background-image: url("imagens/heros/feedback-hero.png");
 }
 
 /* -----------------------------------------
    CTA
 ----------------------------------------- */
 .cta {
-    background-image: url("../imagens/backgrounds/fundo-espacial.png");
+    background-image: url("imagens/backgrounds/fundo-espacial.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -575,7 +575,7 @@ footer .footer-content-bottom {
 }
 
 .home-introduction-image-container {
-    background-image: url("../imagens/backgrounds/fundo-espacial-liquido.png");
+    background-image: url("imagens/backgrounds/fundo-espacial-liquido.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -657,7 +657,7 @@ footer .footer-content-bottom {
 }
 
 .home-about-image-container {
-    background-image: url("../imagens/backgrounds/fundo-espacial-liquido.png");
+    background-image: url("imagens/backgrounds/fundo-espacial-liquido.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -725,7 +725,7 @@ footer .footer-content-bottom {
    Home - Jogo em Destaque
 ----------------------------------------- */
 .home-highlighted-game {
-    background-image: url("../imagens/game-images/lumenfall-background.jpg");
+    background-image: url("imagens/game-images/lumenfall-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -890,7 +890,7 @@ footer .footer-content-bottom {
 }
 
 .project-mission-image-container {
-    background-image: url("../imagens/backgrounds/fundo-espacial-liquido.png");
+    background-image: url("imagens/backgrounds/fundo-espacial-liquido.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
