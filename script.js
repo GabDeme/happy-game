@@ -96,6 +96,18 @@ function preencherModal(jogo) {
     if (titulo) titulo.textContent = jogo.nome;
 
     if (corpo) {
+        // Fase 2: preserva a estrutura e o estilo do modal e altera apenas seus textos.
+        const subtitulo = corpo.querySelector('h3');
+        const paragrafos = corpo.querySelectorAll('p');
+
+        if (subtitulo) subtitulo.textContent = jogo.subtitulo;
+
+        jogo.descricao.forEach(function (texto, indice) {
+            if (paragrafos[indice]) paragrafos[indice].textContent = texto;
+        });
+
+        if (corpo.classList.contains('game-modal-body')) return;
+
         corpo.innerHTML = `
             <h3>${jogo.subtitulo}</h3>
             ${jogo.descricao.map(function (paragrafo) {
@@ -171,6 +183,32 @@ function renderizarJogos() {
 }
 
 renderizarJogos();
+
+// Fase 2: cria os cards resumidos da home a partir do mesmo array de jogos.
+function renderizarJogosNaHome() {
+    const grade = document.querySelector('#homeGamesGrid');
+    if (!grade) return;
+
+    jogos.forEach(function (jogo) {
+        const card = document.createElement('article');
+        card.className = 'home-game-card';
+        card.innerHTML = `
+            <img class="home-game-card-image" src="${jogo.imagem}" alt="${jogo.alt}">
+            <div class="home-game-card-content">
+                <h3>${jogo.nome}</h3>
+                <span>${jogo.estilo} - ${jogo.status}</span>
+                <p>${jogo.descricao[0]}</p>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#${jogo.id}">Ver jogo</button>
+            </div>
+        `;
+        card.querySelector('[data-bs-toggle="modal"]').addEventListener('click', function () {
+            preencherModal(jogo);
+        });
+        grade.appendChild(card);
+    });
+}
+
+renderizarJogosNaHome();
 
 function validarCampo(campo) {
     // Fase 2: valida um campo individual e aplica o feedback visual do Bootstrap.

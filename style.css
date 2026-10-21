@@ -12,9 +12,6 @@ ul {
         min-width: 80vw;
         list-style: none;
         z-index: 10;
-
-
-
         align-items: center;
         gap: 2rem;
         border-radius: 12px;
@@ -788,6 +785,21 @@ footer .footer-content-bottom {
     background-position: center;
     height: auto;
     text-align: center;
+    position: relative;
+    isolation: isolate;
+}
+
+.home-highlighted-game::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: -1;
+}
+
+.home-highlighted-game .section-container {
+    position: relative;
+    z-index: 1;
 }
 
 .home-highlighted-logo {
@@ -1601,4 +1613,10 @@ td {
 /* Estilo arredondado (equivalente à classe .rounded-pill) */
 .rounded-pill {
     border-radius: 50rem;
+}
+
+
+
+.home-highlighted-game .section-container img {
+    color: var(--cor-primaria);
 }

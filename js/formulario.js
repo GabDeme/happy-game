@@ -1,0 +1,3 @@
+// Fase 2: blur, input e submit controlam a validação e o feedback do Bootstrap.
+function validarCampo(campo){const valido=campo.value.trim()!==''&&campo.checkValidity();campo.classList.toggle('is-valid',valido);campo.classList.toggle('is-invalid',!valido);return valido;}
+export function inicializarFormulario(){const formulario=document.querySelector('#formContato');if(!formulario)return;const campos=formulario.querySelectorAll('input, textarea');campos.forEach(campo=>{campo.addEventListener('blur',()=>validarCampo(campo));campo.addEventListener('input',()=>{if(campo.classList.contains('is-invalid'))validarCampo(campo);});});formulario.addEventListener('submit',evento=>{evento.preventDefault();if([...campos].every(validarCampo))formulario.submit();});}

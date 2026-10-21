@@ -1,0 +1,2 @@
+// Fase 2: DOM e eventos visuais marcam a página atual na topbar e no footer.
+export function marcarPaginaAtual(){const atual=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('a[href]').forEach(link=>{const destino=link.getAttribute('href').split('#')[0].split('?')[0];if(destino.split('/').pop()===atual){link.classList.add('pagina-atual');link.setAttribute('aria-current','page');}});}
