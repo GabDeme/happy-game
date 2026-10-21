@@ -269,27 +269,32 @@
         </div>
     </footer>
 
-    <!-- Fase 2: modais Bootstrap com conteúdo preenchido pelo array no script.js. -->
-    <!-- ========================================
-     Modal - Lumenfall
-    ========================================= -->
+    <!-- ----------------------------------------
+        Modal - Lumenfall
+    ----------------------------------------- -->
     <div class="modal fade" id="modalLumenfall" tabindex="-1" aria-labelledby="modalLumenfallLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content game-modal-content">
 
-                <div class="modal-header">
+                <div class="modal-header game-modal-header">
                     <!-- <h2 class="modal-title" id="modalLumenfallLabel">
                         Lumenfall
                     </h2> -->
-                    <img src="imagens/game-logos/lumenfall-logo.png" class="img-fluid d-block mx-auto mb-4"
-                        alt="Logo do jogo Lumenfall">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <div class="game-modal-brand">
+                        <img src="imagens/game-logos/lumenfall-logo.png" class="img-fluid d-block mx-auto mb-4"
+                            alt="Logo do jogo Lumenfall">
+                        <span class="badge bg-warning rounded-pill">
+                            Em desenvolvimento
+                        </span>
+                    </div>
+                    <button type="button" class="btn-close game-modal-close" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body game-modal-body">
 
-                    <div class="indication">
-                        <div>
+                    <div class="game-modal-indication">
+                        <div class="game-modal-indication-text">
                             <img src="imagens/indications/indication-10.webp"
                                 alt="Não recomendado para menores de 10 anos" width="40">
                             Mistério, fantasia e momentos de tensão leve.
@@ -335,19 +340,6 @@
                         <li>
                             <strong>Plataforma:</strong> PC
                         </li>
-                        <!-- <li>
-                            <strong>Status:</strong> Em desenvolvimento
-                        </li> -->
-                        <!-- <li>
-                            <strong>Classificação indicativa sugerida:</strong>
-                            <img src="imagens/indications/indication-10.webp"
-                                alt="Não recomendado para menores de 10 anos" width="40">
-                            mistério, fantasia e momentos de tensão leve.
-                        </li> -->
-                        <!-- <li>
-                            <strong>Avaliação:</strong>
-                            Ainda não disponível, pois o jogo não foi lançado.
-                        </li> -->
                     </ul>
 
                     <small>
@@ -371,33 +363,33 @@
         </div>
     </div>
 
-
-    <!-- ========================================
-     Modal - Moss & Mischief
-    ========================================= -->
+    <!-- ----------------------------------------
+        Modal - Moss & Mischief
+    ----------------------------------------- -->
     <div class="modal fade" id="modalMossMischief" tabindex="-1" aria-labelledby="modalMossMischiefLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content game-modal-content">
 
-                <div class="modal-header">
+                <div class="modal-header game-modal-header">
                     <div class="game-modal-brand">
                         <img src="imagens/game-logos/moss-mischief-logo.png" class="img-fluid"
                             alt="Logo do jogo Moss & Mischief">
 
-                        <span class="badge bg-secondary rounded-pill">
-                            Perfil
+                        <span class="badge bg-success rounded-pill">
+                            Lançado
                         </span>
                     </div>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    <button type="button" class="btn-close game-modal-close" data-bs-dismiss="modal"
+                        aria-label="Fechar">
                     </button>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body game-modal-body">
 
-                    <div class="indication">
-                        <div>
+                    <div class="game-modal-indication">
+                        <div class="game-modal-indication-text">
                             <img src="imagens/indications/indication-livre.webp" alt="Classificação indicativa Livre"
                                 width="40">
                             Aventura fantástica, humor leve e desafios.
@@ -436,7 +428,8 @@
 
                     <div class="text-center my-4">
                         <div class="fs-3" aria-hidden="true">
-                            <span class="text-warning">★ ★ ★ ★</span><span class="text-secondary"> ☆</span>
+                            <span class="text-warning game-modal-rating-star">★ ★ ★ ★</span><span
+                                class="text-secondary game-modal-rating-star"> ☆</span>
                         </div>
                     </div>
 
@@ -452,18 +445,6 @@
                         <li>
                             <strong>Plataforma:</strong> PC
                         </li>
-                        <!-- <li>
-                            <strong>Status:</strong> Lançado
-                        </li> -->
-                        <!-- <li>
-                            <strong>Classificação indicativa sugerida:</strong>
-                            <img src="imagens/indications/indication-livre.webp" alt="Classificação indicativa Livre"
-                                width="40">
-                            aventura fantástica, humor leve e desafios.
-                        </li> -->
-                        <!-- <li>
-                            <strong>Nota ilustrativa:</strong> 8,7/10
-                        </li> -->
                     </ul>
 
                     <small>
@@ -487,27 +468,30 @@
         </div>
     </div>
 
-
-    <!-- ========================================
-     Modal - Pebble & Tide
-    ========================================= -->
+    <!-- ----------------------------------------
+        Modal - Pebble & Tide
+    ----------------------------------------- -->
     <div class="modal fade" id="modalPebbleTide" tabindex="-1" aria-labelledby="modalPebbleTideLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content game-modal-content">
 
-                <div class="modal-header">
-                    <!-- <h2 class="modal-title " id="modalPebbleTideLabel">
-                        Pebble &amp; Tide
-                    </h2> -->
-                    <img src="imagens/game-logos/pebble-tide-logo.png" class="img-fluid d-block mx-auto mb-4"
-                        alt="Logo do jogo Pebble & Tide">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                <div class="modal-header game-modal-header">
+                    <div class="game-modal-brand">
+                        <img src="imagens/game-logos/pebble-tide-logo.png" class="img-fluid d-block mx-auto mb-4"
+                            alt="Logo do jogo Pebble & Tide">
+                        <button type="button" class="btn-close game-modal-close" data-bs-dismiss="modal"
+                            aria-label="Fechar"></button>
+
+                        <span class="badge bg-success rounded-pill">
+                            Lançado
+                        </span>
+                    </div>
                 </div>
 
-                <div class="modal-body">
-                    <div class="indication">
-                        <div>
+                <div class="modal-body game-modal-body">
+                    <div class="game-modal-indication">
+                        <div class="game-modal-indication-text">
                             <img src="imagens/indications/indication-livre.webp" alt="Classificação indicativa Livre"
                                 width="40">
                             Exploração e desafios de raciocínio.
@@ -546,7 +530,7 @@
 
                     <div class="text-center my-4">
                         <div class="fs-3" aria-hidden="true">
-                            <span class="text-warning">★ ★ ★ ★ ★</span>
+                            <span class="text-warning game-modal-rating-star">★ ★ ★ ★ ★</span>
                         </div>
                     </div>
 
@@ -562,18 +546,6 @@
                         <li>
                             <strong>Plataforma:</strong> PC
                         </li>
-                        <!-- <li>
-                            <strong>Status:</strong> Lançado
-                        </li> -->
-                        <!-- <li>
-                            <strong>Classificação indicativa sugerida:</strong>
-                            <img src="imagens/indications/indication-livre.webp" alt="Classificação indicativa Livre"
-                                width="40">
-                            exploração e desafios de raciocínio.
-                        </li> -->
-                        <!-- <li>
-                            <strong>Nota ilustrativa:</strong> 9,0/10
-                        </li> -->
                     </ul>
 
                     <small>

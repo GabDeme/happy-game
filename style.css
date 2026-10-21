@@ -1449,24 +1449,27 @@ td {
 }
 
 
-.modal-content {
+/* ----------------------------------------
+   Modais de jogos
+----------------------------------------- */
+.game-modal-content {
     background-color: rgba(245, 243, 238, 0.12);
-    -webkit-backdrop-filter: blur(15px) !important;
-    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(35px) !important;
+    backdrop-filter: blur(35px) !important;
 }
 
 /* 
-.modal-header {
+.game-modal-header {
     justify-content: center;
 } */
 
-.modal-header div {
+.game-modal-header div {
     display: flex;
     align-items: center;
 }
 
 
-.modal-header {
+.game-modal-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -1498,7 +1501,7 @@ td {
 }
 
 
-.modal-header .btn-close {
+.game-modal-header .game-modal-close {
     position: fixed;
     z-index: 9999;
     margin-left: 90%;
@@ -1506,12 +1509,12 @@ td {
 
 }
 
-.btn-close-red {
+.game-modal-close--red {
     color: var(--cor-destaque);
     background-color: var(--cor-destaque);
 }
 
-.indication {
+.game-modal-indication {
     display: flex;
     background-color: var(--cor-secundaria);
     border-radius: 20px;
@@ -1519,25 +1522,19 @@ td {
 
 }
 
-.indication div {
+.game-modal-indication-text {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 
-.text-warning {
+.game-modal-rating-star {
     font-size: 60px;
 }
 
-
-div div .text-secondary {
-    font-size: 60px;
-}
-
-.modal-body h3 {
+.game-modal-body h3 {
     margin-top: 20px;
 }
-
 
 /* badges!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
