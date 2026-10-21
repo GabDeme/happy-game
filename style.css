@@ -1378,7 +1378,8 @@ td {
 .feedback-rocket-container {
     display: flex;
     position: absolute;
-    justify-content: center;
+    left: 45%;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -1388,7 +1389,7 @@ td {
     align-items: center;
     height: 280px;
     margin-top: -100px;
-    margin-left: 180px;
+    margin-left: -460px;
     transform: rotate(330deg);
 }
 
@@ -1401,6 +1402,20 @@ td {
     margin-top: 20px;
     justify-content: center;
     gap: 50px;
+}
+
+@media (max-width: 991px) {
+    .feedback-rocket-container {
+        position: static;
+        left: auto;
+        justify-content: center;
+    }
+
+    .feedback-rocket-image {
+        height: 200px;
+        max-width: 100%;
+        margin: 10px 0 0 0;
+    }
 }
 
 @media (max-width: 768px) {
