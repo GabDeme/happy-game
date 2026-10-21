@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto - Little Comet Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagens/logo.png">
 </head>
@@ -15,11 +16,11 @@
     ----------------------------------------- -->
     <header class="header">
         <div class="topbar">
-            <div class="studio-logo">
+            <div class="studio-logo d-none d-lg-block">
                 <img src="imagens/logo.png" alt="Logo Little Comet Studio">
             </div>
 
-            <nav>
+            <nav class="d-none d-lg-block">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="projeto.html">Projeto</a></li>
@@ -27,6 +28,7 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+            <div class="d-lg-none ms-auto position-relative"><button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipalMobile" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button><ul class="collapse position-absolute end-0 top-100" id="menuPrincipalMobile"><li><a href="index.html">Início</a></li><li><a href="projeto.html">Projeto</a></li><li><a href="jogos.html">Jogos</a></li><li><a href="contato.html">Contato</a></li></ul></div>
         </div>
     </header>
 
@@ -44,7 +46,7 @@
             História do Estúdio
         ----------------------------------------- -->
         <section class="project-about section-spacing">
-            <div class="section-container">
+            <div class="section-container container">
                 <div class="project-about-card">
                     <h2 class="section-title section-title--section">Como tudo começou</h2>
                     <p>
@@ -70,7 +72,7 @@
             </div>
         </section>
 
-        <section class="project-mission section-container section-spacing">
+        <section class="project-mission section-container section-spacing container">
             <div class="project-mission-content">
                 <h2 class="section-title section-title--intro">Nossa missão</h2>
                 <p>
@@ -88,7 +90,7 @@
         <!-- ----------------------------------------
             Maneira que criamos os jogos  
         ----------------------------------------- -->
-        <section class="project-principles section-container section-spacing">
+        <section class="project-principles section-container section-spacing container">
             <div class="project-principles-text">
                 <h2 class="section-title section-title--section">Como criamos nossos jogos</h2>
                 <p>Cada projeto da Little Comet Studio segue alguns princípios que guiam nossas decisões, do
@@ -207,4 +209,5 @@
 
 </body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="script.js"></script>
 </html>
