@@ -53,11 +53,23 @@
             Lista dos jogos do Estúdio
         ----------------------------------------- -->
         <section class="games-catalog section-container section-spacing">
+            <!-- ----------------------------------------
+            Breadcrumb
+            ----------------------------------------- -->
+            <div class="section-container container">
+                <nav aria-label="Você está em">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Jogos</li>
+                    </ol>
+                </nav>
+            </div>
+
             <div class="games-list-text">
                 <h2 class="section-title section-title--section">
                     Nossos jogos e para quem são eles
                 </h2>
-                <p>Jogos pensados para caber no dia a dia de quem joga. Experiências leves para fâs do estilo de jogos
+                <p>Jogos pensados para caber no dia a dia de quem joga. Experiências leves para fãs do estilo de jogos
                     que mais cresce, indie!
                     <br />
                     Seja uma aventura contemplativa em 3D ou um quebra-cabeça em 2D, a ideia é a mesma explore esses
@@ -65,7 +77,6 @@
                 </p>
                 <br />
             </div>
-            <!-- Fase 2: os cards desta seção são criados pelo JavaScript.
             <article class="game-entry card">
                 <div class="game-entry-image-container">
                     <img class="game-entry-image img-fluid" src="imagens/game-images/lumenfall.jpg"
@@ -81,7 +92,7 @@
                         <ul class="game-specs">
                             <li><strong>Gênero:</strong> Aventura / Exploração</li>
                             <li><strong>Estilo:</strong> 3D</li>
-                            <li><strong>Plataforma:</strong>PC</li>
+                            <li><strong>Plataforma:</strong> PC</li>
                         </ul>
 
                         <span class="game-status game-status--dev">Em desenvolvimento</span>
@@ -93,10 +104,8 @@
                     </p>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-secondary btn-jogos" data-bs-toggle="modal"
-                        data-bs-target="#modalLumenfall">
-                        +
-                    </button>
+                    <a class="btn btn-secondary btn-jogos" href="jogo.html?id=lumenfall"
+                        aria-label="Ver detalhes de Lumenfall">+</a>
                 </div>
             </article>
 
@@ -109,7 +118,7 @@
                 <div class="game-entry-content">
                     <div class="game-entry-header">
                         <img class="home-highlighted-logo" src="imagens/game-logos/moss-mischief-logo.png"
-                            alt="Logo Lumenfall" />
+                            alt="Logo Moss & Mischief" />
                         <h3 class="visually-hidden">Moss &amp; Mischief</h3>
 
                         <ul class="game-specs">
@@ -126,10 +135,8 @@
                     </p>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-secondary btn-jogos" data-bs-toggle="modal"
-                        data-bs-target="#modalMossMischief">
-                        +
-                    </button>
+                    <a class="btn btn-secondary btn-jogos" href="jogo.html?id=moss-mischief"
+                        aria-label="Ver detalhes de Moss & Mischief">+</a>
                 </div>
             </article>
 
@@ -140,7 +147,7 @@
                 </div>
                 <div class="game-entry-content">
                     <div class="game-entry-header">
-                        <img class="home-highlighted-logo" src="imagens/game-logos/pebble-tide-logo.png" />
+                        <img class="home-highlighted-logo" src="imagens/game-logos/pebble-tide-logo.png" alt="Logo Pebble & Tide" />
                         <h3 class="visually-hidden">Pebble &amp; Tide</h3>
 
                         <ul class="game-specs">
@@ -158,12 +165,10 @@
                     </p>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-secondary btn-jogos" data-bs-toggle="modal"
-                        data-bs-target="#modalPebbleTide">
-                        +
-                    </button>
+                    <a class="btn btn-secondary btn-jogos" href="jogo.html?id=pebble-tide"
+                        aria-label="Ver detalhes de Pebble & Tide">+</a>
                 </div>
-            </article> -->
+            </article>
         </section>
 
         <!-- ----------------------------------------
@@ -238,307 +243,6 @@
             <p>&copy; 2026 Little Comet Studio</p>
         </div>
     </footer>
-
-    <!-- ----------------------------------------
-        Modal - Lumenfall
-    ----------------------------------------- -->
-    <div class="modal fade" id="modalLumenfall" tabindex="-1" aria-labelledby="modalLumenfallLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content game-modal-content">
-
-                <div class="modal-header game-modal-header">
-                    <!-- <h2 class="modal-title" id="modalLumenfallLabel">
-                        Lumenfall
-                    </h2> -->
-                    <div class="game-modal-brand">
-                        <img src="imagens/game-logos/lumenfall-logo.png" class="img-fluid d-block mx-auto mb-4"
-                            alt="Logo do jogo Lumenfall">
-                        <span class="badge bg-warning rounded-pill">
-                            Em desenvolvimento
-                        </span>
-                    </div>
-                    <button type="button" class="btn-close game-modal-close" data-bs-dismiss="modal"
-                        aria-label="Fechar"></button>
-                </div>
-
-                <div class="modal-body game-modal-body">
-
-                    <div class="game-modal-indication">
-                        <div class="game-modal-indication-text">
-                            <img src="imagens/indications/indication-10.webp"
-                                alt="Não recomendado para menores de 10 anos" width="40">
-                            Mistério, fantasia e momentos de tensão leve.
-                        </div>
-                    </div>
-
-                    <h3>Uma jornada onde cada luz importa</h3>
-
-                    <p>
-                        Em Lumenfall, um pequeno viajante desperta em um mundo
-                        misterioso, onde a luz está desaparecendo lentamente
-                        e antigas construções escondem histórias esquecidas.
-                        Sem saber exatamente como chegou até ali, ele precisa
-                        explorar florestas luminosas, atravessar pontes antigas
-                        e descobrir o que aconteceu com aquele lugar.
-                    </p>
-
-                    <p>
-                        Durante sua aventura, o jogador encontrará ambientes
-                        repletos de detalhes, criaturas inesperadas e enigmas
-                        que exigem observação e criatividade. Cada região
-                        apresenta novos desafios e pistas sobre o passado
-                        desse universo, incentivando a exploração e a
-                        descoberta de caminhos alternativos.
-                    </p>
-
-                    <p>
-                        Com uma atmosfera envolvente e uma narrativa construída
-                        por meio dos cenários, Lumenfall é uma experiência
-                        voltada para quem gosta de aventuras contemplativas,
-                        descobertas e histórias cheias de mistério.
-                    </p>
-
-                    <h4>Informações do jogo</h4>
-
-                    <ul>
-                        <li>
-                            <strong>Gênero:</strong> Aventura / Exploração
-                        </li>
-                        <li>
-                            <strong>Estilo:</strong> 3D
-                        </li>
-                        <li>
-                            <strong>Plataforma:</strong> PC
-                        </li>
-                    </ul>
-
-                    <small>
-                        A classificação indicativa apresentada é uma sugestão
-                        baseada na temática do jogo, não sendo uma
-                        classificação oficial.
-                    </small>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Fechar
-                    </button>
-
-                    <a href="contato.html" class="btn btn-primary">
-                        Perguntar sobre o jogo
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- ----------------------------------------
-        Modal - Moss & Mischief
-    ----------------------------------------- -->
-    <div class="modal fade" id="modalMossMischief" tabindex="-1" aria-labelledby="modalMossMischiefLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content game-modal-content">
-
-                <div class="modal-header game-modal-header">
-                    <div class="game-modal-brand">
-                        <img src="imagens/game-logos/moss-mischief-logo.png" class="img-fluid"
-                            alt="Logo do jogo Moss & Mischief">
-
-                        <span class="badge bg-success rounded-pill">
-                            Lançado
-                        </span>
-                    </div>
-
-                    <button type="button" class="btn-close game-modal-close" data-bs-dismiss="modal"
-                        aria-label="Fechar">
-                    </button>
-                </div>
-
-                <div class="modal-body game-modal-body">
-
-                    <div class="game-modal-indication">
-                        <div class="game-modal-indication-text">
-                            <img src="imagens/indications/indication-livre.webp" alt="Classificação indicativa Livre"
-                                width="40">
-                            Aventura fantástica, humor leve e desafios.
-                        </div>
-                    </div>
-
-                    <h3>Uma pequena aventura, uma grande confusão</h3>
-
-                    <p>
-                        Moss &amp; Mischief acompanha um sapo curioso que
-                        precisa recuperar sua floresta depois que acontecimentos
-                        misteriosos começam a transformar o ambiente.
-                        Para restaurar o equilíbrio da natureza, ele embarca
-                        em uma jornada por cenários coloridos, plataformas
-                        desafiadoras e lugares escondidos entre cogumelos
-                        gigantes e antigas construções.
-                    </p>
-
-                    <p>
-                        O jogador deverá explorar diferentes áreas, resolver
-                        quebra-cabeças e descobrir maneiras criativas de
-                        superar obstáculos. Saltos precisos, mecanismos
-                        interativos e caminhos secretos fazem parte da
-                        aventura, incentivando a experimentação e a
-                        curiosidade ao longo de cada fase.
-                    </p>
-
-                    <p>
-                        Com uma proposta divertida e acessível, o jogo combina
-                        desafios de plataforma com momentos de humor e
-                        exploração. Seu universo encantador convida jogadores
-                        de diferentes idades a descobrir os segredos da
-                        floresta e acompanhar as travessuras de um protagonista
-                        pequeno no tamanho, mas enorme na determinação.
-                    </p>
-
-                    <div class="text-center my-4">
-                        <div class="fs-3" aria-hidden="true">
-                            <span class="text-warning game-modal-rating-star">★ ★ ★ ★</span><span
-                                class="text-secondary game-modal-rating-star"> ☆</span>
-                        </div>
-                    </div>
-
-                    <h4>Informações do jogo</h4>
-
-                    <ul>
-                        <li>
-                            <strong>Gênero:</strong> Puzzle / Plataforma
-                        </li>
-                        <li>
-                            <strong>Estilo:</strong> 3D
-                        </li>
-                        <li>
-                            <strong>Plataforma:</strong> PC
-                        </li>
-                    </ul>
-
-                    <small>
-                        A classificação indicativa é sugerida e não oficial.
-                        A nota apresentada é ilustrativa e deverá ser
-                        substituída por uma avaliação real.
-                    </small>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Fechar
-                    </button>
-
-                    <a href="contato.html" class="btn btn-primary">
-                        Perguntar sobre o jogo
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- ----------------------------------------
-        Modal - Pebble & Tide
-    ----------------------------------------- -->
-    <div class="modal fade" id="modalPebbleTide" tabindex="-1" aria-labelledby="modalPebbleTideLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content game-modal-content">
-
-                <div class="modal-header game-modal-header">
-                    <div class="game-modal-brand">
-                        <img src="imagens/game-logos/pebble-tide-logo.png" class="img-fluid d-block mx-auto mb-4"
-                            alt="Logo do jogo Pebble & Tide">
-                        <button type="button" class="btn-close game-modal-close" data-bs-dismiss="modal"
-                            aria-label="Fechar"></button>
-
-                        <span class="badge bg-success rounded-pill">
-                            Lançado
-                        </span>
-                    </div>
-                </div>
-
-                <div class="modal-body game-modal-body">
-                    <div class="game-modal-indication">
-                        <div class="game-modal-indication-text">
-                            <img src="imagens/indications/indication-livre.webp" alt="Classificação indicativa Livre"
-                                width="40">
-                            Exploração e desafios de raciocínio.
-                        </div>
-                    </div>
-
-                    <h3>O oceano guarda mais caminhos do que parece</h3>
-
-                    <p>
-                        Em Pebble &amp; Tide, uma pequena criatura aventureira
-                        explora um arquipélago misterioso, formado por ilhas,
-                        cavernas e passagens escondidas. Entretanto, o oceano
-                        não é apenas parte do cenário: suas marés determinam
-                        quais caminhos estarão disponíveis e quais segredos
-                        poderão ser descobertos.
-                    </p>
-
-                    <p>
-                        O jogador precisa observar o movimento da água e
-                        utilizar as mudanças de maré para solucionar enigmas,
-                        alcançar novas regiões e atravessar obstáculos.
-                        Lugares aparentemente inacessíveis podem se tornar
-                        passagens quando o nível do mar diminui, enquanto
-                        outras situações exigem a elevação da água para
-                        permitir o avanço.
-                    </p>
-
-                    <p>
-                        Com uma apresentação em 2D e uma experiência focada
-                        em raciocínio e exploração, Pebble &amp; Tide transforma
-                        o ambiente em parte fundamental dos desafios.
-                        Cada descoberta oferece uma nova perspectiva sobre
-                        as ilhas, incentivando o jogador a experimentar,
-                        observar e encontrar soluções inesperadas.
-                    </p>
-
-                    <div class="text-center my-4">
-                        <div class="fs-3" aria-hidden="true">
-                            <span class="text-warning game-modal-rating-star">★ ★ ★ ★ ★</span>
-                        </div>
-                    </div>
-
-                    <h4>Informações do jogo</h4>
-
-                    <ul>
-                        <li>
-                            <strong>Gênero:</strong> Puzzle / Quebra-cabeça
-                        </li>
-                        <li>
-                            <strong>Estilo:</strong> 2D
-                        </li>
-                        <li>
-                            <strong>Plataforma:</strong> PC
-                        </li>
-                    </ul>
-
-                    <small>
-                        A classificação indicativa é sugerida e não oficial.
-                        A nota apresentada é ilustrativa e deverá ser
-                        substituída por uma avaliação real.
-                    </small>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Fechar
-                    </button>
-
-                    <a href="contato.html" class="btn btn-primary">
-                        Perguntar sobre o jogo
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

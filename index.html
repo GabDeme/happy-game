@@ -28,7 +28,7 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
-            <div class="ms-auto position-relative d-lg-none"> <!-- d-lg-none -->
+            <div class="ms-auto position-relative d-lg-none">
                 <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipalMobile" aria-label="Abrir menu">
                     <span class="navbar-toggler-icon"></span>
@@ -52,6 +52,12 @@
         </div>
 
         <section class="section-container section-spacing container">
+            <nav aria-label="Você está em">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="index.html">Início</a></li>
+                </ol>
+            </nav>
+
             <!-- ----------------------------------------
                 Apresentação Inicial do que é o Estúdio
             ----------------------------------------- -->
@@ -113,7 +119,6 @@
                     curiosidade e busca por um caminho de volta para casa.
                 </p>
                 <br />
-                <!-- <a class="btn-secondary" href="jogos.html?modal=modalLumenfall">Conheça Lumenfall</a> -->
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalLumenfall">
                     Ver jogo
                 </button>
@@ -133,53 +138,6 @@
                 <br />
             </div>
             <div class="home-games-grid" id="homeGamesGrid">
-                <!-- Fase 2: os cards desta seção são criados pelo JavaScript. -->
-                <!--
-                <article class="home-game-card">
-                    <img class="home-game-card-image" src="imagens/game-images/lumenfall.jpg"
-                        alt="Uma pessoa misteriosa com um pequeno lampião na mão direita saindo de uma grande floresta com cogumelos brilhantes observando uma construção misteriosa distanciada por uma ponte">
-                    <div class="home-game-card-content">
-                        <h3>Lumenfall</h3>
-                        <span>3D - Em desenvolvimento</span>
-                        <p>Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno viajante
-                            em busca por um caminho de volta para casa.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                            data-bs-target="#modalLumenfall">
-                            Ver jogo
-                        </button>
-                    </div>
-                </article>
-
-                <article class="home-game-card">
-                    <img class="home-game-card-image" src="imagens/game-images/moss-mischief.jpg"
-                        alt="Sapo pulando por cima de cogumelos gigantes para uma ponte que leva a um altar com uma folha mágica levitando">
-                    <div class="home-game-card-content">
-                        <h3>Moss &amp; Mischief</h3>
-                        <span>3D - Lançado</span>
-                        <p>Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos
-                            secretos e causando a quantidade certa de confusão.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                            data-bs-target="#modalMossMischief">
-                            Ver jogo
-                        </button>
-                    </div>
-                </article>
-
-                <article class="home-game-card">
-                    <img class="home-game-card-image" src="imagens/game-images/pebble-tide.jpg"
-                        alt="Uma pequena batata de pernas e mãos com uma tocha na mão observando uma sequência de pequenas ilhas que levam a mais uma caverna misteriosa">
-                    <div class="home-game-card-content">
-                        <h3>Pebble &amp; Tide</h3>
-                        <span>2D - Lançado</span>
-                        <p>Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os
-                            segredos escondidos além do caminho.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                            data-bs-target="#modalPebbleTide">
-                            Ver jogo
-                        </button>
-                    </div>
-                </article>
-                -->
             </div>
         </section>
 
@@ -273,9 +231,6 @@
             <div class="modal-content game-modal-content">
 
                 <div class="modal-header game-modal-header">
-                    <!-- <h2 class="modal-title" id="modalLumenfallLabel">
-                        Lumenfall
-                    </h2> -->
                     <div class="game-modal-brand">
                         <img src="imagens/game-logos/lumenfall-logo.png" class="img-fluid d-block mx-auto mb-4"
                             alt="Logo do jogo Lumenfall">

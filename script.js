@@ -30,15 +30,19 @@ const jogos = [
         plataforma: 'PC',
         status: 'Em desenvolvimento',
         subtitulo: 'Uma jornada onde cada luz importa',
-        descricao: [
+        descricao_curta: ['Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno viajante em busca por um caminho de volta para casa.'],
+        descricao_grande: [
             'Em Lumenfall, um pequeno viajante desperta em um mundo misterioso, onde a luz está desaparecendo lentamente e antigas construções escondem histórias esquecidas. Sem saber exatamente como chegou até ali, ele precisa explorar florestas luminosas, atravessar pontes antigas e descobrir o que aconteceu com aquele lugar.',
             'Durante sua aventura, o jogador encontrará ambientes repletos de detalhes, criaturas inesperadas e enigmas que exigem observação e criatividade. Cada região apresenta novos desafios e pistas sobre o passado desse universo, incentivando a exploração e a descoberta de caminhos alternativos.',
             'Com uma atmosfera envolvente e uma narrativa construída por meio dos cenários, Lumenfall é uma experiência voltada para quem gosta de aventuras contemplativas, descobertas e histórias cheias de mistério.'
         ],
         informacoes: ['Aventura / Exploração', '3D', 'PC', 'Em desenvolvimento'],
         classificacao: '10 anos — mistério, fantasia e momentos de tensão leve.',
-        nota: 'Ainda não disponível, pois o jogo não foi lançado.',
-        observacao: 'A classificação indicativa apresentada é uma sugestão baseada na temática do jogo, não sendo uma classificação oficial.'
+        idade: 10,
+        resumoClassificacao: 'Mistério, fantasia e momentos de tensão leve.',
+        altDetalhe: 'dsadasss', // mudar depois 
+        observacao: 'A classificação indicativa apresentada é uma sugestão baseada na temática do jogo, não sendo uma classificação oficial.',
+        preco: 49.90, 
     },
     {
         id: 'modalMossMischief',
@@ -51,15 +55,19 @@ const jogos = [
         plataforma: 'PC',
         status: 'Lançado',
         subtitulo: 'Uma pequena aventura, uma grande confusão',
-        descricao: [
+        descricao_curta: ['Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos secretos e causando a quantidade certa de confusão.'],
+        descricao_grande: [
             'Moss & Mischief acompanha um sapo curioso que precisa recuperar sua floresta depois que acontecimentos misteriosos começam a transformar o ambiente. Para restaurar o equilíbrio da natureza, ele embarca em uma jornada por cenários coloridos, plataformas desafiadoras e lugares escondidos entre cogumelos gigantes e antigas construções.',
             'O jogador deverá explorar diferentes áreas, resolver quebra-cabeças e descobrir maneiras criativas de superar obstáculos. Saltos precisos, mecanismos interativos e caminhos secretos fazem parte da aventura, incentivando a experimentação e a curiosidade ao longo de cada fase.',
             'Com uma proposta divertida e acessível, o jogo combina desafios de plataforma com momentos de humor e exploração. Seu universo encantador convida jogadores de diferentes idades a descobrir os segredos da floresta e acompanhar as travessuras de um protagonista pequeno no tamanho, mas enorme na determinação.'
         ],
         informacoes: ['Puzzle / Plataforma', '3D', 'PC', 'Lançado'],
         classificacao: 'Livre — aventura fantástica, humor leve e desafios.',
-        nota: '8,7/10',
-        observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.'
+        idade: 'Livre',
+        resumoClassificacao: 'Aventura fantástica, humor leve e desafios.',
+        altDetalhe: 'dsadasss', // mudar depois 
+        observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.',
+        preco: 49.90,
     },
     {
         id: 'modalPebbleTide',
@@ -72,15 +80,19 @@ const jogos = [
         plataforma: 'PC',
         status: 'Lançado',
         subtitulo: 'O oceano guarda mais caminhos do que parece',
-        descricao: [
+        descricao_curta: ['Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os segredos escondidos além do caminho.'],
+        descricao_grande: [
             'Em Pebble & Tide, uma pequena criatura aventureira explora um arquipélago misterioso, formado por ilhas, cavernas e passagens escondidas. Entretanto, o oceano não é apenas parte do cenário: suas marés determinam quais caminhos estarão disponíveis e quais segredos poderão ser descobertos.',
             'O jogador precisa observar o movimento da água e utilizar as mudanças de maré para solucionar enigmas, alcançar novas regiões e atravessar obstáculos. Lugares aparentemente inacessíveis podem se tornar passagens quando o nível do mar diminui, enquanto outras situações exigem a elevação da água para permitir o avanço.',
             'Com uma apresentação em 2D e uma experiência focada em raciocínio e exploração, Pebble & Tide transforma o ambiente em parte fundamental dos desafios. Cada descoberta oferece uma nova perspectiva sobre as ilhas, incentivando o jogador a experimentar, observar e encontrar soluções inesperadas.'
         ],
         informacoes: ['Puzzle / Quebra-cabeça', '2D', 'PC', 'Lançado'],
         classificacao: 'Livre — exploração e desafios de raciocínio.',
-        nota: '9,0/10',
-        observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.'
+        idade: 'Livre',
+        resumoClassificacao: 'Exploração e desafios de raciocínio.',
+        altDetalhe: 'dsadasss', // mudar depois 
+        observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.',
+        preco: 49.90, 
     }
 ];
 
@@ -102,7 +114,7 @@ function preencherModal(jogo) {
 
         if (subtitulo) subtitulo.textContent = jogo.subtitulo;
 
-        jogo.descricao.forEach(function (texto, indice) {
+        jogo.descricao_grande.forEach(function (texto, indice) {
             if (paragrafos[indice]) paragrafos[indice].textContent = texto;
         });
 
@@ -110,17 +122,15 @@ function preencherModal(jogo) {
 
         corpo.innerHTML = `
             <h3>${jogo.subtitulo}</h3>
-            ${jogo.descricao.map(function (paragrafo) {
-                return `<p>${paragrafo}</p>`;
-            }).join('')}
+            ${jogo.descricao_grande.map(function (paragrafo) {
+            return `<p>${paragrafo}</p>`;
+        }).join('')}
             <h4>Informações do jogo</h4>
             <ul>
                 <li><strong>Gênero:</strong> ${jogo.informacoes[0]}</li>
                 <li><strong>Estilo:</strong> ${jogo.informacoes[1]}</li>
                 <li><strong>Plataforma:</strong> ${jogo.informacoes[2]}</li>
                 <li><strong>Status:</strong> ${jogo.informacoes[3]}</li>
-                <li><strong>Classificação indicativa sugerida:</strong> ${jogo.classificacao}</li>
-                <li><strong>Avaliação:</strong> ${jogo.nota}</li>
             </ul>
             <small>${jogo.observacao}</small>
         `;
@@ -167,7 +177,7 @@ function renderizarJogos() {
                         </button>
                     </div>
                 </div>
-                <p>${jogo.descricao[0]}</p>
+                <p>${jogo.descricao_grande[0]}</p>
             </div>
         `;
 
@@ -197,7 +207,7 @@ function renderizarJogosNaHome() {
             <div class="home-game-card-content">
                 <h3>${jogo.nome}</h3>
                 <span>${jogo.estilo} - ${jogo.status}</span>
-                <p>${jogo.descricao[0]}</p>
+                <p>${jogo.descricao_curta[0]}</p>
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#${jogo.id}">Ver jogo</button>
             </div>
         `;
@@ -268,3 +278,99 @@ if (modalId && window.bootstrap) {
         modal.show();
     }
 }
+
+
+
+
+
+
+
+
+
+
+// Lê ?id=... da URL e devolve o jogo correspondente (ou undefined)
+function obterJogoDaURL() {
+    const slug = new URLSearchParams(window.location.search).get('id');
+    return jogos.find(function (jogo) { return jogo.slug === slug; });
+}
+
+// switch: escolhe o selo e o texto da classificação indicativa
+function obterSeloIdade(idade) {
+    switch (idade) {
+        case 0:  return { imagem: 'imagens/indications/indication-livre.webp', alt: 'Livre para todos os públicos' };
+        case 10: return { imagem: 'imagens/indications/indication-10.webp',    alt: 'Não recomendado para menores de 10 anos' };
+        default: return { imagem: '', alt: '' };
+    }
+}
+
+function formatarPreco(valor) {
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function campo(nome) {
+    return document.querySelector('[data-campo="' + nome + '"]');
+}
+
+function preencherDetalhes(jogo) {
+    const lancado = jogo.status === 'Lançado';
+    const selo = obterSeloIdade(jogo.idade);
+
+    document.title = jogo.nome + ' - Little Comet Studio';
+    campo('titulo-pagina').textContent = jogo.nome;
+    campo('subtitulo-hero').textContent = jogo.subtitulo;
+    campo('nome-breadcrumb').textContent = jogo.nome;
+
+    const status = campo('status');
+    status.textContent = jogo.status;
+    status.classList.add(lancado ? 'bg-success' : 'bg-warning');
+
+    const imgSelo = campo('selo-idade');
+    imgSelo.src = selo.imagem;
+    imgSelo.alt = selo.alt;
+    campo('resumo-classificacao').textContent = jogo.resumoClassificacao;
+
+    campo('subtitulo').textContent = jogo.subtitulo;
+    const descricao = campo('descricao');
+    jogo.descricao.forEach(function (texto) {
+        const p = document.createElement('p');
+        p.textContent = texto;
+        descricao.appendChild(p);
+    });
+
+    const specs = campo('especificacoes');
+    [['Gênero', jogo.genero], ['Estilo', jogo.estilo], ['Plataforma', jogo.plataforma]]
+        .forEach(function (par) {
+            const li = document.createElement('li');
+            li.innerHTML = '<strong>' + par[0] + ':</strong> ';
+            li.append(par[1]);
+            specs.appendChild(li);
+        });
+    campo('observacao').textContent = jogo.observacao;
+
+    const imagem = campo('imagem');
+    imagem.src = jogo.imagem;
+    imagem.alt = jogo.altDetalhe;
+    campo('preco').textContent = formatarPreco(jogo.preco);
+
+    // Jogo em desenvolvimento não pode ser comprado
+    const botao = campo('botao-comprar');
+    if (lancado) {
+        botao.href = 'agradecimento.html?id=' + jogo.slug;
+    } else {
+        botao.textContent = 'Em breve';
+        botao.classList.add('disabled');
+        botao.setAttribute('aria-disabled', 'true');
+    }
+}
+
+function iniciarPaginaDoJogo() {
+    const jogo = obterJogoDaURL();
+    if (!jogo) {
+        document.getElementById('detalhe-jogo').hidden = true;
+        document.getElementById('jogo-nao-encontrado').hidden = false;
+        return;
+    }
+    preencherDetalhes(jogo);
+}
+
+iniciarPaginaDoJogo();

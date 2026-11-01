@@ -1620,3 +1620,110 @@ td {
 .home-highlighted-game .section-container img {
     color: var(--cor-primaria);
 }
+
+
+
+
+/* ----------------------------------------
+   Breadcrumb
+----------------------------------------- */
+.breadcrumb {
+    --bs-breadcrumb-divider: "›";
+    --bs-breadcrumb-divider-color: var(--cor-texto-secundario);
+    --bs-breadcrumb-item-active-color: var(--cor-primaria);
+    margin: 0;
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover,
+.breadcrumb-item a:focus-visible {
+    color: var(--cor-destaque-foco);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* -----------------------------------------
+   Game Datails
+----------------------------------------- */
+.game-detail-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.game-detail-status span {
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+}
+
+.game-detail-indication {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-secundaria);
+    border-radius: 20px;
+}
+
+.game-detail-indication-text {
+    margin-block: 30px;
+}
+
+.game-detail-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.game-detail-description h3 {
+    margin-top: 20px;
+}
+
+.game-detail-media {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.game-detail-image {
+    display: block;
+    width: 400px;
+    height: 300px;
+    max-width: calc(100% - 36px);
+    margin: 18px auto 0;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.game-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px 30px 0 0;
+}
+
+.game-price-label {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.game-price-value {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+.game-detail-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px 30px 0 0;
+}
