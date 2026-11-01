@@ -21,6 +21,7 @@ const jogos = [
     // Fase 2: array centralizado para organizar os dados usados nos cards e nos modais.
     {
         id: 'modalLumenfall',
+        slug: 'lumenfall',
         nome: 'Lumenfall',
         imagem: 'imagens/game-images/lumenfall.jpg',
         logo: 'imagens/game-logos/lumenfall-logo.png',
@@ -42,10 +43,11 @@ const jogos = [
         resumoClassificacao: 'Mistério, fantasia e momentos de tensão leve.',
         altDetalhe: 'dsadasss', // mudar depois 
         observacao: 'A classificação indicativa apresentada é uma sugestão baseada na temática do jogo, não sendo uma classificação oficial.',
-        preco: 49.90, 
+        preco: 49.90,
     },
     {
         id: 'modalMossMischief',
+        slug: 'moss-mischief',
         nome: 'Moss & Mischief',
         imagem: 'imagens/game-images/moss-mischief.jpg',
         logo: 'imagens/game-logos/moss-mischief-logo.png',
@@ -71,6 +73,7 @@ const jogos = [
     },
     {
         id: 'modalPebbleTide',
+        slug: 'pebble-tide',
         nome: 'Pebble & Tide',
         imagem: 'imagens/game-images/pebble-tide.jpg',
         logo: 'imagens/game-logos/pebble-tide-logo.png',
@@ -92,7 +95,7 @@ const jogos = [
         resumoClassificacao: 'Exploração e desafios de raciocínio.',
         altDetalhe: 'dsadasss', // mudar depois 
         observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.',
-        preco: 49.90, 
+        preco: 49.90,
     }
 ];
 
@@ -172,9 +175,9 @@ function renderizarJogos() {
                     </ul>
                     <span class="game-status ${classeStatus}">${jogo.status}</span>
                     <div class="game-entry-actions">
-                        <button type="button" class="btn btn-secondary btn-jogos" data-bs-toggle="modal" data-bs-target="#${jogo.id}">
-                            +
-                        </button>
+                        <a class="btn btn-secondary btn-jogos"
+                           href="informacao-jogo.html?id=${jogo.slug}"
+                           aria-label="Ver detalhes de ${jogo.nome}">+</a>
                     </div>
                 </div>
                 <p>${jogo.descricao_grande[0]}</p>
@@ -297,8 +300,8 @@ function obterJogoDaURL() {
 // switch: escolhe o selo e o texto da classificação indicativa
 function obterSeloIdade(idade) {
     switch (idade) {
-        case 0:  return { imagem: 'imagens/indications/indication-livre.webp', alt: 'Livre para todos os públicos' };
-        case 10: return { imagem: 'imagens/indications/indication-10.webp',    alt: 'Não recomendado para menores de 10 anos' };
+        case 0: return { imagem: 'imagens/indications/indication-livre.webp', alt: 'Livre para todos os públicos' };
+        case 10: return { imagem: 'imagens/indications/indication-10.webp', alt: 'Não recomendado para menores de 10 anos' };
         default: return { imagem: '', alt: '' };
     }
 }
@@ -364,7 +367,10 @@ function preencherDetalhes(jogo) {
 }
 
 function iniciarPaginaDoJogo() {
+    if (!document.getElementById('detalhe-jogo')) return;
+
     const jogo = obterJogoDaURL();
+
     if (!jogo) {
         document.getElementById('detalhe-jogo').hidden = true;
         document.getElementById('jogo-nao-encontrado').hidden = false;
