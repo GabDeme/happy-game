@@ -1785,6 +1785,7 @@ td {
 .game-sort {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
@@ -1795,4 +1796,10 @@ td {
 
 .game-entry-rating .game-modal-rating-star {
     font-size: 24px;
+}
+
+
+.game-hero-logo {
+    width: 600px;
+    height: auto;
 }

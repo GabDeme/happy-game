@@ -217,10 +217,10 @@ function renderizarJogos(lista = jogos) {
         //     preencherModal(jogo);
         // });
 
-        lista.appendChild(card);
+        lista_el.appendChild(card);
     });
 
-    catalogo.appendChild(lista);
+    catalogo.appendChild(lista_el);
 }
 
 renderizarJogos();
@@ -349,6 +349,9 @@ function preencherDetalhes(jogo) {
     document.title = jogo.nome + ' - Little Comet Studio';
     campo('titulo-pagina').textContent = jogo.nome;
     campo('subtitulo-hero').textContent = jogo.subtitulo;
+    const logo = campo('logo-jogo');
+    logo.src = jogo.logo;
+    logo.alt = 'Logo do jogo ' + jogo.nome;
     campo('nome-breadcrumb').textContent = jogo.nome;
 
     const status = campo('status');
@@ -477,10 +480,21 @@ function ordenarPorEstrelas(lista) {
 }
 
 
-const seletorOrdem = document.getElementById('ordenarJogos');
-if (seletorOrdem) {
-    seletorOrdem.addEventListener('change', function () {
-        const lista = seletorOrdem.value === 'estrelas' ? ordenarPorEstrelas(jogos) : jogos;
-        renderizarJogos(lista);
+const botaoOrdenar = document.getElementById('botaoOrdenar');
+let ordenadoPorEstrelas = false;
+
+if (botaoOrdenar) {
+    botaoOrdenar.addEventListener('click', function () {
+        ordenadoPorEstrelas = !ordenadoPorEstrelas;
+
+        if (ordenadoPorEstrelas) {
+            renderizarJogos(ordenarPorEstrelas(jogos));
+            botaoOrdenar.textContent = 'Voltar à ordem original';
+            botaoOrdenar.classList.replace('btn-primary', 'btn-primary');
+        } else {
+            renderizarJogos(jogos);
+            botaoOrdenar.textContent = 'Ordenar por avaliação';
+            botaoOrdenar.classList.replace('btn-primary', 'btn-primary');
+        }
     });
 }
