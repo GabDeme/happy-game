@@ -1,3 +1,30 @@
+// Black Friday 2026 cai em 27/11. Meses em JS começam em 0 (10 = novembro).
+const BLACK_FRIDAY = {
+    inicio: new Date(2026, 10, 23),
+    fim: new Date(2026, 10, 30, 23, 59, 59),
+    fator: 0.5
+};
+
+// Função de 1º grau: preço = a · precoBase + b  (a = fator, b = 0)
+function calcularPrecoComPromocao(precoBase, data) {
+    const emPromocao = data >= BLACK_FRIDAY.inicio && data <= BLACK_FRIDAY.fim;
+    return emPromocao ? BLACK_FRIDAY.fator * precoBase : precoBase;
+}
+
+// demanda: quantidade vendida cai com o preço   q(p) = a − b·p
+// lucro:    L(p) = (p − custo) · q(p)           → parábola (2º grau)
+function calcularLucro(preco, a, b, custo) {
+    return (preco - custo) * (a - b * preco);
+}
+
+// preço que dá o lucro máximo = vértice da parábola
+function precoDeLucroMaximo(a, b, custo) {
+    return (a + b * custo) / (2 * b);
+}
+
+const PRECO_IDEAL = precoDeLucroMaximo(1000, 10, 0) - 0.10; 
+
+
 const formulario = document.querySelector('#formContato');
 
 // Fase 2: identifica a página atual para destacar sua opção na topbar e no footer.
@@ -31,8 +58,8 @@ const jogos = [
         plataforma: 'PC',
         status: 'Em desenvolvimento',
         subtitulo: 'Uma jornada onde cada luz importa',
-        descricao_curta: ['Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno viajante em busca por um caminho de volta para casa.'],
-        descricao_grande: [
+        descricaoCurta: ['Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno viajante em busca por um caminho de volta para casa.'],
+        descricaoLonga: [
             'Em Lumenfall, um pequeno viajante desperta em um mundo misterioso, onde a luz está desaparecendo lentamente e antigas construções escondem histórias esquecidas. Sem saber exatamente como chegou até ali, ele precisa explorar florestas luminosas, atravessar pontes antigas e descobrir o que aconteceu com aquele lugar.',
             'Durante sua aventura, o jogador encontrará ambientes repletos de detalhes, criaturas inesperadas e enigmas que exigem observação e criatividade. Cada região apresenta novos desafios e pistas sobre o passado desse universo, incentivando a exploração e a descoberta de caminhos alternativos.',
             'Com uma atmosfera envolvente e uma narrativa construída por meio dos cenários, Lumenfall é uma experiência voltada para quem gosta de aventuras contemplativas, descobertas e histórias cheias de mistério.'
@@ -43,7 +70,8 @@ const jogos = [
         resumoClassificacao: 'Mistério, fantasia e momentos de tensão leve.',
         altDetalhe: 'dsadasss', // mudar depois 
         observacao: 'A classificação indicativa apresentada é uma sugestão baseada na temática do jogo, não sendo uma classificação oficial.',
-        preco: 49.90,
+        preco: PRECO_IDEAL,
+        estrelas: null
     },
     {
         id: 'modalMossMischief',
@@ -57,19 +85,20 @@ const jogos = [
         plataforma: 'PC',
         status: 'Lançado',
         subtitulo: 'Uma pequena aventura, uma grande confusão',
-        descricao_curta: ['Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos secretos e causando a quantidade certa de confusão.'],
-        descricao_grande: [
+        descricaoCurta: ['Ajude um sapo curioso a recuperar sua floresta resolvendo enigmas, descobrindo caminhos secretos e causando a quantidade certa de confusão.'],
+        descricaoLonga: [
             'Moss & Mischief acompanha um sapo curioso que precisa recuperar sua floresta depois que acontecimentos misteriosos começam a transformar o ambiente. Para restaurar o equilíbrio da natureza, ele embarca em uma jornada por cenários coloridos, plataformas desafiadoras e lugares escondidos entre cogumelos gigantes e antigas construções.',
             'O jogador deverá explorar diferentes áreas, resolver quebra-cabeças e descobrir maneiras criativas de superar obstáculos. Saltos precisos, mecanismos interativos e caminhos secretos fazem parte da aventura, incentivando a experimentação e a curiosidade ao longo de cada fase.',
             'Com uma proposta divertida e acessível, o jogo combina desafios de plataforma com momentos de humor e exploração. Seu universo encantador convida jogadores de diferentes idades a descobrir os segredos da floresta e acompanhar as travessuras de um protagonista pequeno no tamanho, mas enorme na determinação.'
         ],
         informacoes: ['Puzzle / Plataforma', '3D', 'PC', 'Lançado'],
         classificacao: 'Livre — aventura fantástica, humor leve e desafios.',
-        idade: 'Livre',
+        idade: 0,
         resumoClassificacao: 'Aventura fantástica, humor leve e desafios.',
         altDetalhe: 'dsadasss', // mudar depois 
         observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.',
-        preco: 49.90,
+        preco: PRECO_IDEAL,
+        estrelas: 4
     },
     {
         id: 'modalPebbleTide',
@@ -83,19 +112,20 @@ const jogos = [
         plataforma: 'PC',
         status: 'Lançado',
         subtitulo: 'O oceano guarda mais caminhos do que parece',
-        descricao_curta: ['Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os segredos escondidos além do caminho.'],
-        descricao_grande: [
+        descricaoCurta: ['Explore um mundo misterioso onde a luz está desaparecendo. Pule, explore e descubra os segredos escondidos além do caminho.'],
+        descricaoLonga: [
             'Em Pebble & Tide, uma pequena criatura aventureira explora um arquipélago misterioso, formado por ilhas, cavernas e passagens escondidas. Entretanto, o oceano não é apenas parte do cenário: suas marés determinam quais caminhos estarão disponíveis e quais segredos poderão ser descobertos.',
             'O jogador precisa observar o movimento da água e utilizar as mudanças de maré para solucionar enigmas, alcançar novas regiões e atravessar obstáculos. Lugares aparentemente inacessíveis podem se tornar passagens quando o nível do mar diminui, enquanto outras situações exigem a elevação da água para permitir o avanço.',
             'Com uma apresentação em 2D e uma experiência focada em raciocínio e exploração, Pebble & Tide transforma o ambiente em parte fundamental dos desafios. Cada descoberta oferece uma nova perspectiva sobre as ilhas, incentivando o jogador a experimentar, observar e encontrar soluções inesperadas.'
         ],
         informacoes: ['Puzzle / Quebra-cabeça', '2D', 'PC', 'Lançado'],
         classificacao: 'Livre — exploração e desafios de raciocínio.',
-        idade: 'Livre',
+        idade: 0,
         resumoClassificacao: 'Exploração e desafios de raciocínio.',
         altDetalhe: 'dsadasss', // mudar depois 
         observacao: 'A classificação indicativa é sugerida e não oficial. A nota apresentada é ilustrativa e deverá ser substituída por uma avaliação real.',
-        preco: 49.90,
+        preco: PRECO_IDEAL,
+        estrelas: 5
     }
 ];
 
@@ -117,7 +147,7 @@ function preencherModal(jogo) {
 
         if (subtitulo) subtitulo.textContent = jogo.subtitulo;
 
-        jogo.descricao_grande.forEach(function (texto, indice) {
+        jogo.descricaoLonga.forEach(function (texto, indice) {
             if (paragrafos[indice]) paragrafos[indice].textContent = texto;
         });
 
@@ -125,7 +155,7 @@ function preencherModal(jogo) {
 
         corpo.innerHTML = `
             <h3>${jogo.subtitulo}</h3>
-            ${jogo.descricao_grande.map(function (paragrafo) {
+            ${jogo.descricaoLonga.map(function (paragrafo) {
             return `<p>${paragrafo}</p>`;
         }).join('')}
             <h4>Informações do jogo</h4>
@@ -180,14 +210,14 @@ function renderizarJogos() {
                            aria-label="Ver detalhes de ${jogo.nome}">+</a>
                     </div>
                 </div>
-                <p>${jogo.descricao_grande[0]}</p>
+                <p>${jogo.descricaoLonga[0]}</p>
             </div>
         `;
 
         // Fase 2: evento click atualiza o conteúdo do modal antes de sua abertura.
-        card.querySelector('[data-bs-toggle="modal"]').addEventListener('click', function () {
-            preencherModal(jogo);
-        });
+        // card.querySelector('[data-bs-toggle="modal"]').addEventListener('click', function () {
+        //     preencherModal(jogo);
+        // });
 
         lista.appendChild(card);
     });
@@ -210,7 +240,7 @@ function renderizarJogosNaHome() {
             <div class="home-game-card-content">
                 <h3>${jogo.nome}</h3>
                 <span>${jogo.estilo} - ${jogo.status}</span>
-                <p>${jogo.descricao_curta[0]}</p>
+                <p>${jogo.descricaoCurta[0]}</p>
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#${jogo.id}">Ver jogo</button>
             </div>
         `;
@@ -333,11 +363,11 @@ function preencherDetalhes(jogo) {
     campo('resumo-classificacao').textContent = jogo.resumoClassificacao;
 
     campo('subtitulo').textContent = jogo.subtitulo;
-    const descricao = campo('descricao');
-    jogo.descricao.forEach(function (texto) {
+    const descricaoLonga = campo('descricaoLonga');
+    jogo.descricaoLonga.forEach(function (texto) {
         const p = document.createElement('p');
         p.textContent = texto;
-        descricao.appendChild(p);
+        descricaoLonga.appendChild(p);
     });
 
     const specs = campo('especificacoes');
@@ -353,16 +383,37 @@ function preencherDetalhes(jogo) {
     const imagem = campo('imagem');
     imagem.src = jogo.imagem;
     imagem.alt = jogo.altDetalhe;
-    campo('preco').textContent = formatarPreco(jogo.preco);
 
-    // Jogo em desenvolvimento não pode ser comprado
+    // campo('preco').textContent = formatarPreco(jogo.preco);
+
+    const hoje = new Date();   // para o vídeo: new Date(2026, 10, 27)
+    const precoFinal = calcularPrecoComPromocao(jogo.preco, hoje);
+    const emPromocao = precoFinal < jogo.preco;
+
+    campo('preco').innerHTML = emPromocao
+        ? '<s class="text-secondary fs-6">' + formatarPreco(jogo.preco) + '</s> ' + formatarPreco(precoFinal)
+        : formatarPreco(precoFinal);
+
+
+    // Compra só é possível para jogos lançados; o modal pede a confirmação
     const botao = campo('botao-comprar');
     if (lancado) {
-        botao.href = 'agradecimento.html?id=' + jogo.slug;
+        campo('modal-nome-jogo').textContent = jogo.nome;
+        campo('modal-preco-jogo').textContent = formatarPreco(precoFinal);
+        campo('confirmar-compra').href = 'agradecimento.html?id=' + jogo.slug;
     } else {
         botao.textContent = 'Em breve';
-        botao.classList.add('disabled');
-        botao.setAttribute('aria-disabled', 'true');
+        botao.disabled = true;
+        botao.removeAttribute('data-bs-toggle');
+        botao.removeAttribute('data-bs-target');
+    }
+
+    const estrelas = campo('estrelas');
+    if (jogo.estrelas) {
+        estrelas.innerHTML = gerarEstrelas(jogo.estrelas);
+        estrelas.setAttribute('aria-label', jogo.estrelas + ' de 5 estrelas');
+    } else {
+        estrelas.textContent = 'Ainda sem avaliações';
     }
 }
 
@@ -380,3 +431,51 @@ function iniciarPaginaDoJogo() {
 }
 
 iniciarPaginaDoJogo();
+
+
+
+// Lista "Você também pode gostar": todos os jogos, menos o que está em destaque
+function renderizarOutrosJogos() {
+    const grade = document.querySelector('#outrosJogosGrid');
+    if (!grade) return;
+
+    const jogoAtual = obterJogoDaURL();
+
+    jogos
+        .filter(function (jogo) {
+            return !jogoAtual || jogo.slug !== jogoAtual.slug;
+        })
+        .forEach(function (jogo) {
+            const card = document.createElement('article');
+            card.className = 'home-game-card';
+            card.innerHTML = `
+                <img class="home-game-card-image" src="${jogo.imagem}" alt="${jogo.alt}">
+                <div class="home-game-card-content">
+                    <h3>${jogo.nome}</h3>
+                    <span>${jogo.estilo} - ${jogo.status}</span>
+                    <p>${jogo.descricaoCurta[0]}</p>
+                    <a class="btn btn-secondary" href="informacao-jogo.html?id=${jogo.slug}">Ver jogo</a>
+                </div>
+            `;
+            grade.appendChild(card);
+        });
+}
+
+
+function gerarEstrelas(nota, maximo = 5) {
+    let estrelas = '';
+    for (let i = 1; i <= maximo; i++) {
+        estrelas += i <= nota
+            ? '<span class="text-warning game-modal-rating-star" aria-hidden="true">★</span>'
+            : '<span class="text-secondary game-modal-rating-star" aria-hidden="true">☆</span>';
+    }
+    return estrelas;
+}
+
+function ordenarPorEstrelas(lista) {
+    return [...lista].sort(function (a, b) {
+        return (b.estrelas ?? -1) - (a.estrelas ?? -1);
+    });
+}
+
+

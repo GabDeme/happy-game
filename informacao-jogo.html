@@ -38,6 +38,32 @@
         </div>
     </header>
 
+    <!-- ----------------------------------------
+        Confirmação de compra
+    ----------------------------------------- -->
+    <div class="modal fade" id="modalConfirmarCompra" tabindex="-1" aria-labelledby="tituloConfirmarCompra"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloConfirmarCompra">Confirmar compra</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Você tem certeza de que quer comprar
+                        <strong data-campo="modal-nome-jogo"></strong>
+                        por <strong data-campo="modal-preco-jogo"></strong>?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    <a class="btn btn-primary" data-campo="confirmar-compra">Sim, comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
         <!-- ----------------------------------------
             Hero
@@ -51,61 +77,77 @@
             <p class="page-subtitle" data-campo="subtitulo-hero"></p>
         </div>
 
+
         <!-- ----------------------------------------
+        Detalhes do jogo
+        ----------------------------------------- -->
+        <section class="game-about section-spacing">
+            <!-- ----------------------------------------
             Breadcrumb
         ----------------------------------------- -->
-        <div class="section-container section-spacing container">
-            <nav aria-label="Você está em">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Início</a></li>
-                    <li class="breadcrumb-item"><a href="jogos.html">Jogos</a></li>
-                    <li class="breadcrumb-item active" <li class="breadcrumb-item active" aria-current="page"
-                        data-campo="nome-breadcrumb"></li>
-                </ol>
-            </nav>
-        </div>
-
-        <!-- ----------------------------------------
-            Detalhes do jogo
-        ----------------------------------------- -->
-        <article class="game-detail" id="detalhe-jogo">
             <div class="section-container container">
-                <div class="game-detail-status"><span class="badge rounded-pill" data-campo="status"></span></div>
+                <nav aria-label="Você está em">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                        <li class="breadcrumb-item"><a href="jogos.html">Jogos</a></li>
+                        <li class="breadcrumb-item active" <li class="breadcrumb-item active" aria-current="page"
+                            data-campo="nome-breadcrumb"></li>
+                    </ol>
+                </nav>
+            </div>
 
-                <div class="game-detail-indication">
-                    <div class="game-detail-indication-text">
-                        <img data-campo="selo-idade" width="40" alt="">
-                        <span data-campo="resumo-classificacao"></span>
-                    </div>
+            <div class="section-container container">
+
+                <div class="game-about-card">
+                    <article class="game-detail" id="detalhe-jogo">
+                        <div class="section-container container">
+                            <div class="game-detail-status"><span class="badge rounded-pill" data-campo="status"></span>
+                            </div>
+
+                            <div class="game-detail-indication">
+                                <div class="game-detail-indication-text">
+                                    <img data-campo="selo-idade" width="40" alt="">
+                                    <span data-campo="resumo-classificacao"></span>
+                                </div>
+                            </div>
+
+                            <div class="game-detail-layout">
+                                <div class="game-detail-description">
+                                    <h3 data-campo="subtitulo"></h3>
+                                    <div data-campo="descricaoLonga"></div>
+                                    <h4>Informações do jogo</h4>
+                                    <ul class="game-detail-specs" data-campo="especificacoes"></ul>
+                                    <small data-campo="observacao"></small>
+                                </div>
+
+                                <div class="game-detail-media">
+                                    <img class="game-detail-image" data-campo="imagem" alt="">
+                                    <p class="game-price">
+                                        <span class="game-price-label">Por apenas</span>
+                                        <strong class="game-price-value" data-campo="preco"></strong>
+                                    </p>
+                                    <div class="game-detail-actions">
+                                        <a href="contato.html" class="btn btn-secondary">Perguntar sobre o jogo</a>
+                                        <button type="button" class="btn btn-primary" data-campo="botao-comprar"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalConfirmarCompra">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </article>
+
                 </div>
-
-                <div class="game-detail-layout">
-                    <div class="game-detail-description">
-                        <h3 data-campo="subtitulo"></h3>
-                        <div data-campo="descricao"></div>
-                        <h4>Informações do jogo</h4>
-                        <ul class="game-detail-specs" data-campo="especificacoes"></ul>
-                        <small data-campo="observacao"></small>
-                    </div>
-
-                    <div class="game-detail-media">
-                        <img class="game-detail-image" data-campo="imagem" alt="">
-                        <p class="game-price">
-                            <span class="game-price-label">Valor</span>
-                            <strong class="game-price-value" data-campo="preco"></strong>
-                        </p>
-                        <div class="game-detail-actions">
-                            <a href="contato.html" class="btn btn-secondary">Perguntar sobre o jogo</a>
-                            <a class="btn btn-primary" data-campo="botao-comprar">Comprar</a>
-                        </div>
-                    </div>
+                <div class="banana">
+                    <div class="game-rating" data-campo="estrelas"></div>
                 </div>
             </div>
-        </article>
 
-        <div id="jogo-nao-encontrado" class="section-container container" hidden>
-            <p>Não encontramos este jogo. <a href="jogos.html">Voltar ao catálogo</a></p>
-        </div>
+            <div id="jogo-nao-encontrado" class="section-container container" hidden>
+                <p>Não encontramos este jogo. <a href="jogos.html">Voltar ao catálogo</a></p>
+            </div>
+
+        </section>
 
         <!-- ----------------------------------------
             Outros jogos
@@ -119,7 +161,7 @@
                 </p>
                 <br />
             </div>
-            <div class="home-games-grid" id="homeGamesGrid">
+            <div class="home-games-grid" id="outrosJogosGrid">
             </div>
         </section>
     </main>
@@ -158,5 +200,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
+<script>
+    renderizarOutrosJogos();
+</script>
 
 </html>
