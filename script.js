@@ -22,7 +22,7 @@ function precoDeLucroMaximo(a, b, custo) {
     return (a + b * custo) / (2 * b);
 }
 
-const PRECO_IDEAL = precoDeLucroMaximo(1000, 10, 0) - 0.10; 
+const PRECO_IDEAL = precoDeLucroMaximo(1000, 10, 0) - 0.10;
 
 
 const formulario = document.querySelector('#formContato');
@@ -170,21 +170,18 @@ function preencherModal(jogo) {
     }
 }
 
-function renderizarJogos() {
-    // Fase 2: cria os cards dinamicamente para evitar repetir a estrutura no HTML.
+function renderizarJogos(lista = jogos) {
     const catalogo = document.querySelector('.games-catalog');
-
     if (!catalogo) return;
 
-    catalogo.querySelectorAll('.game-entry').forEach(function (card) {
-        card.remove();
+    catalogo.querySelectorAll('.game-entry, .jogos-renderizados').forEach(function (el) {
+        el.remove();
     });
 
-    const lista = document.createElement('div');
-    lista.className = 'jogos-renderizados';
+    const lista_el = document.createElement('div');
+    lista_el.className = 'jogos-renderizados';
 
-    // Fase 2: percorre o array com forEach e cria um card para cada jogo.
-    jogos.forEach(function (jogo) {
+    lista.forEach(function (jogo) {
         const card = document.createElement('article');
         const classeStatus = jogo.status === 'Em desenvolvimento'
             ? 'game-status--dev'
@@ -204,6 +201,7 @@ function renderizarJogos() {
                         <li><strong>Plataforma:</strong> ${jogo.plataforma}</li>
                     </ul>
                     <span class="game-status ${classeStatus}">${jogo.status}</span>
+                    <div class="game-entry-rating">${jogo.estrelas ? gerarEstrelas(jogo.estrelas) : 'Sem avaliações'}</div>
                     <div class="game-entry-actions">
                         <a class="btn btn-secondary btn-jogos"
                            href="informacao-jogo.html?id=${jogo.slug}"
@@ -479,3 +477,10 @@ function ordenarPorEstrelas(lista) {
 }
 
 
+const seletorOrdem = document.getElementById('ordenarJogos');
+if (seletorOrdem) {
+    seletorOrdem.addEventListener('change', function () {
+        const lista = seletorOrdem.value === 'estrelas' ? ordenarPorEstrelas(jogos) : jogos;
+        renderizarJogos(lista);
+    });
+}
