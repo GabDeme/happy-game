@@ -6,7 +6,6 @@ ul {
     padding-right: 2rem
 }
 
-/* Fase 2: menu mobile responsivo criado com o componente Navbar do Bootstrap. */
 @media (max-width: 992px) {
     #menuPrincipalMobile {
         min-width: 80vw;
@@ -1128,13 +1127,11 @@ footer .footer-content-bottom {
 }
 
 .jogos-renderizados {
-    /* Fase 2: organiza verticalmente os cards criados pelo JavaScript. */
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-/* Fase 2: usa o componente card do Bootstrap sem perder o visual original dos jogos. */
 .game-entry.card {
     display: flex;
     flex-direction: row;
@@ -1354,7 +1351,6 @@ td {
     align-content: center;
 }
 
-/* Fase 2: reserva espaço para o feedback sem alterar a altura do formulário. */
 .contact-card form>div {
     margin-bottom: 0 !important;
 }
@@ -1452,7 +1448,6 @@ td {
 
 
 
-/* Fase 2: estilos complementares para os botões e modais dos jogos. */
 .game-entry-header div {
     display: flex;
     justify-content: center;

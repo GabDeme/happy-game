@@ -27,7 +27,6 @@ const PRECO_IDEAL = precoDeLucroMaximo(1000, 10, 0) - 0.10;
 
 const formulario = document.querySelector('#formContato');
 
-// Fase 2: identifica a página atual para destacar sua opção na topbar e no footer.
 function marcarPaginaAtual() {
     const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -45,7 +44,6 @@ function marcarPaginaAtual() {
 marcarPaginaAtual();
 
 const jogos = [
-    // Fase 2: array centralizado para organizar os dados usados nos cards e nos modais.
     {
         id: 'modalLumenfall',
         slug: 'lumenfall',
@@ -130,7 +128,6 @@ const jogos = [
 ];
 
 function preencherModal(jogo) {
-    // Fase 2: manipulação do DOM para preencher o modal com os dados do jogo selecionado.
     const modal = document.getElementById(jogo.id);
 
     if (!modal) return;
@@ -141,7 +138,6 @@ function preencherModal(jogo) {
     if (titulo) titulo.textContent = jogo.nome;
 
     if (corpo) {
-        // Fase 2: preserva a estrutura e o estilo do modal e altera apenas seus textos.
         const subtitulo = corpo.querySelector('h3');
         const paragrafos = corpo.querySelectorAll('p');
 
@@ -212,7 +208,6 @@ function renderizarJogos(lista = jogos) {
             </div>
         `;
 
-        // Fase 2: evento click atualiza o conteúdo do modal antes de sua abertura.
         // card.querySelector('[data-bs-toggle="modal"]').addEventListener('click', function () {
         //     preencherModal(jogo);
         // });
@@ -225,7 +220,6 @@ function renderizarJogos(lista = jogos) {
 
 renderizarJogos();
 
-// Fase 2: cria os cards resumidos da home a partir do mesmo array de jogos.
 function renderizarJogosNaHome() {
     const grade = document.querySelector('#homeGamesGrid');
     if (!grade) return;
@@ -252,7 +246,6 @@ function renderizarJogosNaHome() {
 renderizarJogosNaHome();
 
 function validarCampo(campo) {
-    // Fase 2: valida um campo individual e aplica o feedback visual do Bootstrap.
     const preenchido = campo.value.trim() !== '';
     const valido = preenchido && campo.checkValidity();
 
@@ -266,12 +259,10 @@ if (formulario) {
     const campos = formulario.querySelectorAll('input, textarea');
 
     campos.forEach(function (campo) {
-        // Fase 2: blur valida o campo quando o usuário sai dele.
         campo.addEventListener('blur', function () {
             validarCampo(campo);
         });
 
-        // Fase 2: input atualiza o feedback enquanto o usuário corrige o campo.
         campo.addEventListener('input', function () {
             if (campo.classList.contains('is-invalid')) {
                 validarCampo(campo);
@@ -279,7 +270,6 @@ if (formulario) {
         });
     });
 
-    // Fase 2: submit valida todos os campos antes de permitir o envio.
     formulario.addEventListener('submit', function (evento) {
         evento.preventDefault();
 
@@ -300,7 +290,6 @@ if (formulario) {
 const parametros = new URLSearchParams(window.location.search);
 const modalId = parametros.get('modal');
 
-// Fase 2: abre automaticamente o modal solicitado por outra página através da URL.
 if (modalId && window.bootstrap) {
     const modalElemento = document.getElementById(modalId);
 

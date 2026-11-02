@@ -1,4 +1,3 @@
-// Fase 2: DOM e eventos visuais marcam a página atual na topbar e no footer.
 export function marcarPaginaAtual() {
     const atual = window.location.pathname.split('/').pop() || 'index.html';
     

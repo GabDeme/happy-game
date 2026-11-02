@@ -1,4 +1,3 @@
-// Fase 2: blur, input e submit controlam a validação e o feedback do Bootstrap.
 function validarCampo(campo) {
     const valido = campo.value.trim() !== '' && campo.checkValidity();
 

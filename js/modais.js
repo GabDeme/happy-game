@@ -1,4 +1,3 @@
-// Fase 2: find/getElementById e querySelector atualizam o modal selecionado.
 export function preencherModal(jogo) {
     const modal = document.getElementById(jogo.id);
 

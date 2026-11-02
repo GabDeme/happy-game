@@ -61,7 +61,6 @@ export const jogos = [
     }
 ];
 
-// Fase 2: forEach, createElement e appendChild criam os cards sem recarregar a página.
 export function renderizarJogos(preencherModal) {
     const catalogo = document.querySelector('.games-catalog');
 
