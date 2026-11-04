@@ -1,0 +1,201 @@
+@import url("./home.css");
+
+/* -----------------------------------------
+   Jogos - Lista
+----------------------------------------- */
+.games-catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.games-list-text {
+    text-align: center;
+}
+
+.games-catalog .home-highlighted-logo {
+    display: block;
+    width: min(250px, 100%);
+    max-height: 110px;
+    object-fit: contain;
+}
+
+.game-sort {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.game-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 2rem;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background-color: rgba(245, 243, 238, 0.12);
+}
+
+.rendered-games {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.game-entry.card {
+    display: flex;
+    flex-direction: row;
+    color: inherit;
+    background-color: rgba(245, 243, 238, 0.12);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.game-entry-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+}
+
+.game-entry-image-container {
+    max-width: 300px;
+}
+
+.game-entry-image {
+    max-width: 260px;
+    border-radius: 20px;
+}
+
+.game-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.game-entry-header h3 {
+    margin: 0;
+}
+
+.game-specs {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-specs li {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.game-specs strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 2px;
+}
+
+.game-status {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.game-status--development {
+    color: #FAC775;
+}
+
+.game-status--released {
+    color: #97C459;
+}
+
+.game-entry-content .btn-primary {
+    display: flex;
+}
+
+.game-entry-actions {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin: 0 0 0 auto !important;
+}
+
+caption {
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+
+    .game-entry,
+    .game-entry.card {
+        flex-direction: column;
+        gap: 16px;
+        padding: 1.5rem;
+    }
+
+    .game-entry-image-container {
+        align-self: center;
+        justify-content: center;
+    }
+
+    .game-entry-header {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .game-specs {
+        gap: 20px;
+    }
+}
+
+.game-entry-header div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.games-button {
+    background-color: transparent;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.games-button:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-secundario);
+    border: var(--cor-destaque);
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+}
+/* Hero da Página de Jogos */
+.hero--games {
+    background-image: url("../images/heros/games-hero.png");
+}
+
+
+
+
+

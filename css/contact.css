@@ -1,0 +1,103 @@
+/* -----------------------------------------
+   Contato - Formulário
+----------------------------------------- */
+.contact-container {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/comet-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
+
+.contact-card {
+    width: 50%;
+    align-items: center;
+    gap: 2rem;
+    padding: 8%;
+    border-radius: 12px;
+    background-color: rgba(245, 243, 238, 0.12);
+    box-sizing: border-box;
+    margin: var(--espacamento-padrao) auto;
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-card form div {
+    margin-bottom: var(--espacamento-padrao);
+}
+
+.contact-card label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    height: 60px;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 40px;
+    color: var(--cor-secundaria);
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.contact-card textarea {
+    height: 200px;
+    padding: 1rem 1.25rem;
+}
+
+.contact-card textarea::placeholder {
+    color: #8a8a8a;
+    font-family: inherit;
+}
+
+.contact-card .btn-primary {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 40px auto 0;
+    font-size: 1.05rem;
+    text-align: center;
+    align-content: center;
+}
+
+.contact-card form>div {
+    margin-bottom: 0 !important;
+}
+
+.contact-card form>div:not(.contact-message-field):not(:last-child) {
+    min-height: 112px;
+}
+
+.contact-card form>div.contact-message-field {
+    min-height: 270px;
+}
+
+.contact-card form .invalid-feedback {
+    display: block;
+    visibility: hidden;
+    min-height: 24px;
+}
+
+.contact-card form input.is-invalid+.invalid-feedback,
+.contact-card form textarea.is-invalid+.invalid-feedback {
+    visibility: visible;
+}
+
+@media (max-width: 767.98px) {
+    .contact-card {
+        width: 100%;
+    }
+}
+
+
+
+

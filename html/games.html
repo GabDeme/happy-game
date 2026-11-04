@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos - Little Comet Studio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="imagens/logo.png">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/games.css">
+    <link rel="icon" type="image/png" href="../images/logo.png">
 </head>
 
 <body>
@@ -17,25 +18,25 @@
     <header class="header">
         <div class="topbar">
             <div class="studio-logo d-none d-lg-block">
-                <img src="imagens/logo.png" alt="Logo Little Comet Studio">
+                <img src="../images/logo.png" alt="Logo Little Comet Studio">
             </div>
 
             <nav class="d-none d-lg-block">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="projeto.html">Projeto</a></li>
-                    <li><a href="jogos.html">Jogos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="../html/index.html">Início</a></li>
+                    <li><a href="../html/project.html">Projeto</a></li>
+                    <li><a href="../html/games.html">Jogos</a></li>
+                    <li><a href="../html/contact.html">Contato</a></li>
                 </ul>
             </nav>
             <div class="d-lg-none ms-auto position-relative"><button class="navbar-toggler navbar-dark" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#menuPrincipalMobile" aria-label="Abrir menu"><span
+                    data-bs-toggle="collapse" data-bs-target="#mobileMainMenu" aria-label="Abrir menu"><span
                         class="navbar-toggler-icon"></span></button>
-                <ul class="collapse position-absolute end-0 top-100" id="menuPrincipalMobile">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="projeto.html">Projeto</a></li>
-                    <li><a href="jogos.html">Jogos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                <ul class="collapse position-absolute end-0 top-100" id="mobileMainMenu">
+                    <li><a href="../html/index.html">Início</a></li>
+                    <li><a href="../html/project.html">Projeto</a></li>
+                    <li><a href="../html/games.html">Jogos</a></li>
+                    <li><a href="../html/contact.html">Contato</a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +60,7 @@
             <div class="section-container container">
                 <nav aria-label="Você está em">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                        <li class="breadcrumb-item"><a href="../html/index.html">Início</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Jogos</li>
                     </ol>
                 </nav>
@@ -79,20 +80,20 @@
             </div>
 
             <div class="game-sort">
-                <button type="button" id="botaoOrdenar" class="btn btn-primary">
+                <button type="button" id="sortButton" class="btn btn-primary">
                     Ordenar por avaliação
                 </button>
             </div>
 
             <article class="game-entry card">
                 <div class="game-entry-image-container">
-                    <img class="game-entry-image img-fluid" src="imagens/game-images/lumenfall.jpg"
+                    <img class="game-entry-image img-fluid" src="../images/game-images/lumenfall.jpg"
                         alt="Uma pessoa misteriosa com um pequeno lampião na mão direita saindo de uma grande floresta com cogumelos brilhantes observando uma construção misteriosa distanciada por uma ponte">
                 </div>
 
                 <div class="game-entry-content">
                     <div class="game-entry-header">
-                        <img class="home-highlighted-logo" src="imagens/game-logos/lumenfall-logo.png"
+                        <img class="home-highlighted-logo" src="../images/game-logos/lumenfall-logo.png"
                             alt="Logo Lumenfall" />
                         <h3 class="visually-hidden">Lumenfall</h3>
 
@@ -102,7 +103,7 @@
                             <li><strong>Plataforma:</strong> PC</li>
                         </ul>
 
-                        <span class="game-status game-status--dev">Em desenvolvimento</span>
+                        <span class="game-status game-status--development">Em desenvolvimento</span>
                     </div>
                     <p>
                         Explore um mundo esquecido onde a luz está desaparecendo lentamente. Guie um pequeno
@@ -111,20 +112,20 @@
                     </p>
                 </div>
                 <div>
-                    <a class="btn btn-secondary btn-jogos" href="informacao-jogo.html?id=lumenfall"
+                    <a class="btn btn-secondary games-button" href="../html/game-information.html?id=lumenfall"
                         aria-label="Ver detalhes de Lumenfall">+</a>
                 </div>
             </article>
 
             <article class="game-entry card">
                 <div class="game-entry-image-container">
-                    <img class="game-entry-image img-fluid" src="imagens/game-images/moss-mischief.jpg"
+                    <img class="game-entry-image img-fluid" src="../images/game-images/moss-mischief.jpg"
                         alt="Sapo pulando por cima de cogumelos gigantes para uma ponte que leva a um altar com uma folha mágica levitando">
                 </div>
 
                 <div class="game-entry-content">
                     <div class="game-entry-header">
-                        <img class="home-highlighted-logo" src="imagens/game-logos/moss-mischief-logo.png"
+                        <img class="home-highlighted-logo" src="../images/game-logos/moss-mischief-logo.png"
                             alt="Logo Moss & Mischief" />
                         <h3 class="visually-hidden">Moss &amp; Mischief</h3>
 
@@ -142,19 +143,19 @@
                     </p>
                 </div>
                 <div>
-                    <a class="btn btn-secondary btn-jogos" href="informacao-jogo.html?id=moss-mischief"
+                    <a class="btn btn-secondary games-button" href="../html/game-information.html?id=moss-mischief"
                         aria-label="Ver detalhes de Moss & Mischief">+</a>
                 </div>
             </article>
 
             <article class="game-entry card">
                 <div class="game-entry-image-container">
-                    <img class="game-entry-image img-fluid" src="imagens/game-images/pebble-tide.jpg"
+                    <img class="game-entry-image img-fluid" src="../images/game-images/pebble-tide.jpg"
                         alt="Uma pequena batata de pernas e mãos com uma tocha na mão observando uma sequência de pequenas ilhas que levam a mais uma caverna misteriosa">
                 </div>
                 <div class="game-entry-content">
                     <div class="game-entry-header">
-                        <img class="home-highlighted-logo" src="imagens/game-logos/pebble-tide-logo.png"
+                        <img class="home-highlighted-logo" src="../images/game-logos/pebble-tide-logo.png"
                             alt="Logo Pebble & Tide" />
                         <h3 class="visually-hidden">Pebble &amp; Tide</h3>
 
@@ -173,7 +174,7 @@
                     </p>
                 </div>
                 <div>
-                    <a class="btn btn-secondary btn-jogos" href="informacao-jogo.html?id=pebble-tide"
+                    <a class="btn btn-secondary games-button" href="../html/game-information.html?id=pebble-tide"
                         aria-label="Ver detalhes de Pebble & Tide">+</a>
                 </div>
             </article>
@@ -186,7 +187,7 @@
             <div class="section-container">
                 <h2 class="section-title section-title--section">Gostou do que viu?</h2>
                 <p>Fale com a gente e acompanhe as novidades dos nossos próximos lançamentos.</p>
-                <a class="btn-primary" href="contato.html">Falar com o estúdio</a>
+                <a class="btn-primary" href="../html/contact.html">Falar com o estúdio</a>
             </div>
         </section>
 
@@ -197,26 +198,29 @@
             <h2 class="section-title section-title--section">Perguntas frequentes</h2>
 
             <details class="faq-card">
-                <summary>Onde posso jogar os jogos da Little Comet Studio?</summary>
+                <summary>Como encontro informações sobre cada jogo?</summary>
                 <p>
-                    Nossos jogos lançados são feitos exclusivamente para PC pois esse é o caminho mais comum para a
-                    maioria dos brasileiros (<a href="https://www.pesquisagamebrasil.com.br">PGB 2026 -
-                        Relatório Gratuito</a>).
+                    Na listagem, selecione o botão de detalhes do jogo. Cada título possui uma página própria com
+                    descrição, gênero, plataforma, status, classificação indicativa, preço demonstrativo e opção
+                    de compra para os jogos lançados.
                 </p>
             </details>
 
             <details class="faq-card">
-                <summary>Qual é o público dos jogos da Little Comet Studio?</summary>
+                <summary>Por que os jogos são desenvolvidos para PC?</summary>
                 <p>
-                    Nossos jogos são feitos para jogadores indie da geração Z e Millenials, os maiores públicos dos
-                    jogos indie (<a href="https://quanticfoundry.com/2025/12/18/gen-ai/">2025 - Quantic Foundry</a>)
+                    O PC foi escolhido como plataforma inicial por ser acessível e adequado ao escopo dos projetos
+                    independentes. Essa decisão pode ser revisada conforme os jogos evoluírem e novos públicos forem
+                    identificados, como indicam as pesquisas sobre hábitos de jogadores indie.
                 </p>
             </details>
 
             <details class="faq-card">
-                <summary>Vocês aceitam sugestões para os próximos jogos?</summary>
+                <summary>O catálogo já representa jogos finalizados?</summary>
                 <p>
-                    Sim! Você pode enviar sua sugestão através da nossa página de contato.
+                    O catálogo combina projetos lançados e projetos em desenvolvimento. As páginas de detalhes
+                    apresentam esse status com clareza, enquanto a compra e o download fazem parte de uma
+                    experiência demonstrativa desta fase do projeto.
                 </p>
             </details>
         </section>
@@ -228,7 +232,7 @@
     ----------------------------------------- -->
     <footer>
         <div class="footer-logo-container">
-            <img class="footer-logo" src="imagens/logo.png" alt="Logo Little Comet Studio">
+            <img class="footer-logo" src="../images/logo.png" alt="Logo Little Comet Studio">
         </div>
         <div class="footer-content">
             <h3>Little Comet<br />Studio</h3>
@@ -236,10 +240,10 @@
         </div>
         <div class="footer-links">
             <nav aria-label="footer">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projeto.html">Projeto</a></li>
-                <li><a href="jogos.html">Jogos</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="../html/index.html">Início</a></li>
+                <li><a href="../html/project.html">Projeto</a></li>
+                <li><a href="../html/games.html">Jogos</a></li>
+                <li><a href="../html/contact.html">Contato</a></li>
             </nav>
         </div>
         <div class="footer-email-container">
@@ -254,6 +258,13 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+<script type="module" src="../js/games.js"></script>
 
 </html>
+
+
+
+
+
+
+

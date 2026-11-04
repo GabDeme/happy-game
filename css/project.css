@@ -1,0 +1,195 @@
+/* -----------------------------------------
+   Projeto - Sobre
+----------------------------------------- */
+.project-about {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/comet-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
+
+.project-about-card {
+    align-items: center;
+    gap: 2rem;
+    padding: 8%;
+    border-radius: 12px;
+    background-color: rgba(245, 243, 238, 0.12);
+    box-sizing: border-box;
+    margin: var(--espacamento-padrao) auto;
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* -----------------------------------------
+   Projeto - Missão
+----------------------------------------- */
+.project-mission {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 30px;
+}
+
+.project-mission-image-container {
+    background-image: url("../images/backgrounds/fundo-espacial-liquido.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 375px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.project-mission-image {
+    width: 175px;
+    margin: 40px 100px;
+}
+
+
+.project-mission-content {
+    text-align: center;
+    width: 650px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .project-mission {
+        flex-direction: column;
+        max-width: 550px;
+        gap: 20px;
+    }
+
+    .project-mission-content {
+        order: 2;
+        text-align: center;
+        width: 100%;
+        max-width: 550px;
+    }
+
+    .project-mission-image-container {
+        order: 1;
+    }
+
+}
+
+/* Celular */
+@media (max-width: 576px) {
+    .project-mission {
+        width: 100%;
+        max-width: none;
+        padding: 0 20px 30px;
+        box-sizing: border-box;
+    }
+
+    .project-mission-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .project-mission-image-container {
+        width: clamp(250px, 65vw, 350px);
+        height: clamp(200px, 52vw, 300px);
+    }
+
+    .project-mission-image {
+        display: block;
+        width: auto;
+        height: clamp(140px, 35vw, 200px);
+        margin-top: clamp(30px, 7vw, 120px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* -----------------------------------------
+   Projeto - Como desenvolvemos nossos jogos
+----------------------------------------- */
+.project-principles {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.project-principles-text {
+    text-align: center;
+}
+
+.project-principles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-inline: auto;
+}
+
+.project-principle-card {
+    width: 250px;
+    flex: 0 0 250px;
+
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(245, 243, 238, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 243, 238, 0.18);
+}
+
+.project-principle-card div {
+    height: 50px;
+}
+
+.project-principle-card h3 {
+    margin: 20px 20px;
+    font-size: 1.35rem;
+    line-height: 1.1;
+}
+
+.project-principle-card p {
+    margin: 10px 20px;
+    min-height: 124px;
+}
+
+@media (min-width: 1200px) {
+
+    .project-principles-grid {
+        max-width: 1060px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .project-principles-grid {
+        max-width: 790px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-principles-grid {
+        max-width: 520px;
+    }
+}
+
+/* Celular */
+@media (max-width: 576px) {
+    .project-principles-grid {
+        max-width: 250px;
+    }
+}
+
+/* Hero da Página de Projeto */
+.hero--project {
+    background-image: url("../images/heros/project-hero.png");
+}
+
+
+
+

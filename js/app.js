@@ -1,6 +1,15 @@
-import { renderizarJogos } from './jogos.js';
-import { preencherModal, abrirModalPelaURL } from './modais.js';
-import { marcarPaginaAtual } from './navegacao.js';
-import { inicializarFormulario } from './formulario.js';
+import { renderGames } from './game-catalog.js';
+import { populateModal, openModalFromUrl } from './modal.js';
+import { markCurrentPage } from './navigation.js';
+import { initializeForm } from './form-validation.js';
 
-marcarPaginaAtual(); renderizarJogos(preencherModal); inicializarFormulario(); abrirModalPelaURL();
+markCurrentPage(); renderGames(populateModal); initializeForm(); openModalFromUrl();
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+/* -----------------------------------------
+   Feedback - Mensagem
+----------------------------------------- */
+.hero--feedback {
+    background-image: url("../images/heros/feedback-hero.png");
+}
+
+.feedback-rocket-container {
+    display: flex;
+    position: absolute;
+    left: 45%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.feedback-rocket-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    margin-top: -100px;
+    margin-left: -460px;
+    transform: rotate(330deg);
+}
+
+.feedback-message {
+    text-align: center;
+}
+
+.feedback-message-actions {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 50px;
+}
+
+@media (max-width: 991px) {
+    .feedback-rocket-container {
+        position: static;
+        left: auto;
+        justify-content: center;
+    }
+
+    .feedback-rocket-image {
+        height: 200px;
+        max-width: 100%;
+        margin: 10px 0 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback-message-actions {
+        gap: clamp(20px, 6vw, 50px);
+    }
+}
+
+@media (max-width: 576px) {
+    .feedback-message-actions {
+        gap: clamp(20px, 6vw, 50px);
+    }
+}
+
+
+
+

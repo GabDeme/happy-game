@@ -6,33 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo - Little Comet Studio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="imagens/logo.png">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/game-details.css">
+    <link rel="icon" type="image/png" href="../images/logo.png">
 </head>
 
 <body>
     <header class="header">
         <div class="topbar">
             <div class="studio-logo d-none d-lg-block">
-                <img src="imagens/logo.png" alt="Logo Little Comet Studio">
+                <img src="../images/logo.png" alt="Logo Little Comet Studio">
             </div>
 
             <nav class="d-none d-lg-block">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="projeto.html">Projeto</a></li>
-                    <li><a href="jogos.html">Jogos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="../html/index.html">Início</a></li>
+                    <li><a href="../html/project.html">Projeto</a></li>
+                    <li><a href="../html/games.html">Jogos</a></li>
+                    <li><a href="../html/contact.html">Contato</a></li>
                 </ul>
             </nav>
             <div class="d-lg-none ms-auto position-relative"><button class="navbar-toggler navbar-dark" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#menuPrincipalMobile" aria-label="Abrir menu"><span
+                    data-bs-toggle="collapse" data-bs-target="#mobileMainMenu" aria-label="Abrir menu"><span
                         class="navbar-toggler-icon"></span></button>
-                <ul class="collapse position-absolute end-0 top-100" id="menuPrincipalMobile">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="projeto.html">Projeto</a></li>
-                    <li><a href="jogos.html">Jogos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                <ul class="collapse position-absolute end-0 top-100" id="mobileMainMenu">
+                    <li><a href="../html/index.html">Início</a></li>
+                    <li><a href="../html/project.html">Projeto</a></li>
+                    <li><a href="../html/games.html">Jogos</a></li>
+                    <li><a href="../html/contact.html">Contato</a></li>
                 </ul>
             </div>
         </div>
@@ -52,13 +53,13 @@
                 <div class="modal-body">
                     <p>
                         Você tem certeza de que quer comprar
-                        <strong data-campo="modal-nome-jogo"></strong>
-                        por <strong data-campo="modal-preco-jogo"></strong>?
+                        <strong data-field="gameModalName"></strong>
+                        por <strong data-field="gameModalPrice"></strong>?
                     </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                    <a class="btn btn-primary" data-campo="confirmar-compra">Sim, comprar</a>
+                    <a class="btn btn-primary" data-field="confirmPurchase">Sim, comprar</a>
                 </div>
             </div>
         </div>
@@ -68,12 +69,12 @@
         <!-- ----------------------------------------
             Hero
         ----------------------------------------- -->
-        <div class="hero hero--contact">
+        <div class="hero hero--contact hero--game-detail">
             <div class="game-hero-logo">
-                <img data-campo="logo-jogo" class="img-fluid d-block mx-auto mb-4" src="" alt="">
+                <img data-field="gameLogo" class="img-fluid d-block mx-auto mb-4" src="" alt="">
             </div>
-            <h1 class="page-main-title visually-hidden" data-campo="titulo-pagina">Jogo</h1>
-            <p class="page-subtitle" data-campo="subtitulo-hero"></p>
+            <h1 class="page-main-title visually-hidden" data-field="pageTitle">Jogo</h1>
+            <p class="page-subtitle" data-field="heroSubtitle"></p>
         </div>
 
 
@@ -87,10 +88,10 @@
             <div class="section-container container">
                 <nav aria-label="Você está em">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
-                        <li class="breadcrumb-item"><a href="jogos.html">Jogos</a></li>
-                        <li class="breadcrumb-item active" <li class="breadcrumb-item active" aria-current="page"
-                            data-campo="nome-breadcrumb"></li>
+                        <li class="breadcrumb-item"><a href="../html/index.html">Início</a></li>
+                        <li class="breadcrumb-item"><a href="../html/games.html">Jogos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"
+                            data-field="breadcrumbName"></li>
                     </ol>
                 </nav>
             </div>
@@ -98,36 +99,36 @@
             <div class="section-container container">
 
                 <div class="game-about-card">
-                    <article class="game-detail" id="detalhe-jogo">
+                    <article class="game-detail" id="game-detail">
                         <div class="section-container container">
-                            <div class="game-detail-status"><span class="badge rounded-pill" data-campo="status"></span>
+                            <div class="game-detail-status"><span class="badge rounded-pill" data-field="status"></span>
                             </div>
 
                             <div class="game-detail-indication">
                                 <div class="game-detail-indication-text">
-                                    <img data-campo="selo-idade" width="40" alt="">
-                                    <span data-campo="resumo-classificacao"></span>
+                                    <img data-field="ageRating" width="40" alt="">
+                                    <span data-field="ratingSummary"></span>
                                 </div>
                             </div>
 
                             <div class="game-detail-layout">
                                 <div class="game-detail-description">
-                                    <h3 data-campo="subtitulo"></h3>
-                                    <div data-campo="descricaoLonga"></div>
+                                    <h3 data-field="subtitle"></h3>
+                                    <div data-field="longDescription"></div>
                                     <h4>Informações do jogo</h4>
-                                    <ul class="game-detail-specs" data-campo="especificacoes"></ul>
-                                    <small data-campo="observacao"></small>
+                                    <ul class="game-detail-specs" data-field="specifications"></ul>
+                                    <small data-field="observation"></small>
                                 </div>
 
                                 <div class="game-detail-media">
-                                    <img class="game-detail-image" data-campo="imagem" alt="">
+                                    <img class="game-detail-image" data-field="image" alt="">
                                     <p class="game-price">
                                         <span class="game-price-label">Por apenas</span>
-                                        <strong class="game-price-value" data-campo="preco"></strong>
+                                        <strong class="game-price-value" data-field="price"></strong>
                                     </p>
                                     <div class="game-detail-actions">
-                                        <a href="contato.html" class="btn btn-secondary">Perguntar sobre o jogo</a>
-                                        <button type="button" class="btn btn-primary" data-campo="botao-comprar"
+                                        <a href="../html/contact.html" class="btn btn-secondary">Perguntar sobre o jogo</a>
+                                        <button type="button" class="btn btn-primary" data-field="buyButton"
                                             data-bs-toggle="modal"
                                             data-bs-target="#modalConfirmarCompra">Comprar</button>
                                     </div>
@@ -137,13 +138,13 @@
                     </article>
 
                 </div>
-                <div class="banana">
-                    <div class="game-rating" data-campo="estrelas"></div>
+                <div class="game-rating-container">
+                    <div class="game-rating" data-field="stars"></div>
                 </div>
             </div>
 
-            <div id="jogo-nao-encontrado" class="section-container container" hidden>
-                <p>Não encontramos este jogo. <a href="jogos.html">Voltar ao catálogo</a></p>
+            <div id="game-not-found" class="section-container container" hidden>
+                <p>Não encontramos este jogo. <a href="../html/games.html">Voltar ao catálogo</a></p>
             </div>
 
         </section>
@@ -160,7 +161,7 @@
                 </p>
                 <br />
             </div>
-            <div class="home-games-grid" id="outrosJogosGrid">
+            <div class="home-games-grid" id="otherGamesGrid">
             </div>
         </section>
     </main>
@@ -170,7 +171,7 @@
     ----------------------------------------- -->
     <footer>
         <div class="footer-logo-container">
-            <img class="footer-logo" src="imagens/logo.png" alt="Logo Little Comet Studio">
+            <img class="footer-logo" src="../images/logo.png" alt="Logo Little Comet Studio">
         </div>
         <div class="footer-content">
             <h3>Little Comet<br />Studio</h3>
@@ -178,10 +179,10 @@
         </div>
         <div class="footer-links">
             <nav aria-label="footer">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projeto.html">Projeto</a></li>
-                <li><a href="jogos.html">Jogos</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="../html/index.html">Início</a></li>
+                <li><a href="../html/project.html">Projeto</a></li>
+                <li><a href="../html/games.html">Jogos</a></li>
+                <li><a href="../html/contact.html">Contato</a></li>
             </nav>
         </div>
         <div class="footer-email-container">
@@ -198,9 +199,14 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-<script>
-    renderizarOutrosJogos();
-</script>
+<script type="module" src="../js/game-details.js"></script>
 
 </html>
+
+
+
+
+
+
+
+
